@@ -1,0 +1,24 @@
+# Alarm Clock App
+alarmClock:
+  module: alarmClock
+  class: AlarmClock
+  alarm_time: sensor.alarm_time_pixel
+  wakemeup: input_boolean.wakemeup
+  naturalwakeup: input_number.alarm_natural_wakeup_fade_in
+  alarmweekday: input_boolean.alarmweekday
+  radiowakeup: input_boolean.radiowakeup
+  wakeup_light: light.bedroom_lights
+  fade_in_time_multiplicator: 60
+  isweekday: binary_sensor.workday_today
+  circadian_switch: switch.adaptive_lighting_schlafzimmer
+  #circadian_switch_2: switch.circadian_lighting_circadian_schlafzimmer_brightness
+  deactivate_motionTrigger: input_boolean.appswitch_motion_schlafzimmer
+  #deactivate_motionTrigger_2: automation.motionschlafzimmeron
+  entity_off: binary_sensor.fl_motion_occupancy
+  volume: input_number.volume
+  nacht: input_boolean.nightmode
+  kaffescript: script.checkkaffee
+  global_dependencies:
+    - globals
+    - secrets
+

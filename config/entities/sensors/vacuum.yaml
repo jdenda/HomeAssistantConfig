@@ -1,0 +1,83 @@
+# # Template Sensors
+# platform: template
+# sensors:
+# # Vacuum Template Sensors
+#   vacuum_battery:
+
+
+    ####################################################
+    #                                                  #
+    #                      VACUUM                      #
+    #                                                  #
+    ####################################################
+platform: template
+sensors:
+  roborock_battery_level:
+    friendly_name: Akku
+    unit_of_measurement: '%'
+    value_template: "{{ state_attr('vacuum.rockrobo', 'battery_level') }}"
+    icon_template: "{{ state_attr('vacuum.rockrobo', 'battery_icon') }}"
+
+  roborock_state:
+    friendly_name: Roborock S5
+    value_template: >-
+      {% if is_state('vacuum.rockrobo', 'docked') %}
+      Docked
+      {% elif is_state('vacuum.rockrobo', 'paused') %}
+      Pausiert
+      {% elif is_state('vacuum.rockrobo', 'cleaning') %}
+      Reinigt
+      {% elif is_state('vacuum.rockrobo', 'returning') %}
+      Rückkehr
+      {% else %}
+      {{ states('vacuum.rockrobo') }}
+      {% endif %}
+    icon_template: 'bha:roborock'
+
+  roborock_fan_speed:
+    value_template: "{{ state_attr('vacuum.rockrobo', 'fan_speed') }}"
+
+  roborock_filter:
+    friendly_name: Filter
+    unit_of_measurement: '%'
+    value_template: "{{ (state_attr('vacuum.rockrobo', 'filter')|float /1.5 | round)}}"
+    icon_template: 'mdi:air-filter'
+
+  roborock_hauptburste:
+    friendly_name: Hauptbürste
+    unit_of_measurement: '%'
+    value_template: "{{ (state_attr('vacuum.rockrobo', 'mainBrush')|float / 3) | round }}"
+    icon_template: 'mdi:broom'
+
+  roborock_sensor:
+    friendly_name: Sensor
+    unit_of_measurement: '%'
+    value_template: "{{ (state_attr('vacuum.rockrobo', 'sensor')|float / 0.3) | round }}"
+    icon_template: 'mdi:leak'
+
+  roborock_sidebrush:
+    friendly_name: Seitenbürste
+    unit_of_measurement: '%'
+    value_template: "{{ (state_attr('vacuum.rockrobo', 'sideBrush')|float / 2) | round }}"
+    icon_template: 'mdi:brush'
+
+  # roborock_time:
+  #   friendly_name: Dauer
+  #   unit_of_measurement: Minuten
+    
+  #   icon_template: mdi:clock
+  # roborock_last_clean:
+  #   entity_id: sensor.time
+  #   friendly_name: Zulezt gereinigt
+  #   icon_template: 'mdi:clock'
+  #   value_template: >
+  #     {% set endTime = 
+  #     (as_timestamp(now()) - as_timestamp(state_attr('vacuum.rockrobo', 'endTime') | default(0))) %}
+  #     {% if endTime | timestamp_custom("%d") | int-1 == 1 %}{{ endTime | timestamp_custom("%d") | int-1}} vor einem Tag
+  #     {% elif endTime | timestamp_custom("%d") | int-1 >= 2 %}{{ endTime | timestamp_custom("%d") | int-1}} Vor Tagen
+  #     {% elif endTime | timestamp_custom("%H") | int-1 == 1 %}{{ endTime | timestamp_custom("%H") | int-1}} vor einer Stunde
+  #     {% elif endTime | timestamp_custom("%H") | int-1 >= 2 %}{{ endTime | timestamp_custom("%H") | int-1}} vor Stunden
+  #     {% elif endTime | timestamp_custom("%M")|int == 1 %}{{ endTime | timestamp_custom("%M") | int}} vor einer Minute
+  #     {% elif endTime | timestamp_custom("%M")|int >= 2 %}{{ endTime | timestamp_custom("%M") | int}} vor Minuten 
+  #     {% else %}Vor weniger als 1 Minute
+  #     {% endif %}

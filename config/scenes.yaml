@@ -1,0 +1,3091 @@
+- id: '1596457540533'
+  name: AZ_LI_OFF
+  entities:
+    light.spot_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 251
+      color:
+        x: 0.405
+        y: 0.39
+      color_temp: 272
+      linkquality: 70
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 1
+      supported_features: 63
+    light.spot_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 248
+      color:
+        x: 0.17
+        y: 0.701
+      color_temp: 156
+      linkquality: 68
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 2
+      supported_features: 63
+    light.spot_3:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 250
+      color:
+        x: 0.435
+        y: 0.4
+      color_temp: 264
+      linkquality: 70
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 3
+      supported_features: 63
+    light.spot_4:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 250
+      color:
+        x: 0.151
+        y: 0.344
+      color_temp: 103
+      linkquality: 68
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 4
+      supported_features: 63
+    light.wled:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - Android
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Circus
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Fade
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Merry Christmas
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Police All
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Red & Blue
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running 2
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Chase
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Areas
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      intensity: 3
+      palette: Default
+      playlist:
+      preset:
+      reverse: false
+      speed: 7
+      friendly_name: WLED
+      icon: mdi:led-strip-variant
+      supported_features: 55
+      type: light-rgb
+      room: arbeitszimmer
+      state: 'off'
+    switch.wled_nightlight:
+      duration: 60
+      fade: true
+      target_brightness: 0
+      friendly_name: WLED Nightlight
+      icon: mdi:weather-night
+      state: 'off'
+    switch.wled_sync_send:
+      udp_port: 21324
+      friendly_name: WLED Sync Send
+      icon: mdi:upload-network-outline
+      state: 'off'
+    switch.wled_sync_receive:
+      udp_port: 21324
+      friendly_name: WLED Sync Receive
+      icon: mdi:download-network-outline
+      state: 'off'
+    light.lightstrip_back:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 251
+      color:
+        x: 0.414
+        y: 0.394
+      color_temp: 276
+      linkquality: 70
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Lightstrip Back
+      supported_features: 63
+    switch.monitorlampe:
+      manufacturer: SONOFF
+      model: Micro
+      sw_version: CKA-DM4-GL v3.6.0
+      cloud: online
+      rssi: -43
+      friendly_name: Monitorlampe
+      supported_features: 0
+      state: 'off'
+- id: '1596475950351'
+  name: SZ_LI_OFF
+  entities:
+    light.bedroom_lights:
+      effect_list:
+      - Fast Random Loop
+      - Christmas
+      - Slowdown
+      - Strobe epilepsy!
+      - Police2
+      - Slow Temp
+      - LSD
+      - RGB
+      - Disco
+      - Stop
+      - WhatsApp
+      - Facebook
+      - Alarm
+      - Strobe color
+      - Twitter
+      - Police
+      - Random Loop
+      entity_id:
+      - light.kommodenlampe
+      - light.schreibtischlampe
+      - light.nachttischlampe
+      friendly_name: Bedroom Lights
+      max_mireds: 588
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+- id: '1596476005374'
+  name: SZ_LI_ON
+  entities:
+    light.bedroom_lights:
+      brightness: 254
+      color_temp: 351
+      effect_list:
+      - Fast Random Loop
+      - Christmas
+      - Slowdown
+      - Strobe epilepsy!
+      - Police2
+      - Slow Temp
+      - LSD
+      - RGB
+      - Disco
+      - Stop
+      - WhatsApp
+      - Facebook
+      - Alarm
+      - Strobe color
+      - Twitter
+      - Police
+      - Random Loop
+      entity_id:
+      - light.kommodenlampe
+      - light.schreibtischlampe
+      - light.nachttischlampe
+      friendly_name: Bedroom Lights
+      hs_color:
+      - 28.092
+      - 61.159
+      max_mireds: 588
+      min_mireds: 153
+      rgb_color:
+      - 255
+      - 172
+      - 99
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.51
+      - 0.386
+- id: '1596531089380'
+  name: AZ_LI_WORK
+  entities:
+    light.wled:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - Android
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Circus
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Fade
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Merry Christmas
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Police All
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Red & Blue
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running 2
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Chase
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Areas
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      brightness: 255
+      hs_color:
+      - 27.231
+      - 50.98
+      rgb_color:
+      - 255
+      - 184
+      - 125
+      xy_color:
+      - 0.476
+      - 0.378
+      effect: Solid
+      intensity: 3
+      palette: Default
+      playlist:
+      preset:
+      reverse: false
+      speed: 7
+      friendly_name: WLED
+      icon: mdi:led-strip-variant
+      supported_features: 55
+      type: light-rgb
+      room: arbeitszimmer
+      state: 'on'
+    switch.wled_nightlight:
+      duration: 60
+      fade: true
+      target_brightness: 0
+      friendly_name: WLED Nightlight
+      icon: mdi:weather-night
+      state: 'off'
+    switch.wled_sync_receive:
+      udp_port: 21324
+      friendly_name: WLED Sync Receive
+      icon: mdi:download-network-outline
+      state: 'off'
+    switch.wled_sync_send:
+      udp_port: 21324
+      friendly_name: WLED Sync Send
+      icon: mdi:upload-network-outline
+      state: 'off'
+    light.spot_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 252
+      color_temp: 272
+      hs_color:
+      - 40.667
+      - 35.294
+      rgb_color:
+      - 255
+      - 226
+      - 165
+      xy_color:
+      - 0.405
+      - 0.39
+      color:
+        x: 0.405
+        y: 0.39
+      linkquality: 70
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 1
+      supported_features: 63
+    light.spot_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 250
+      color_temp: 156
+      hs_color:
+      - 135.294
+      - 100
+      rgb_color:
+      - 0
+      - 255
+      - 64
+      xy_color:
+      - 0.17
+      - 0.701
+      color:
+        x: 0.17
+        y: 0.701
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 2
+      supported_features: 63
+    light.spot_3:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 252
+      color_temp: 255
+      hs_color:
+      - 39.652
+      - 45.098
+      rgb_color:
+      - 255
+      - 215
+      - 140
+      xy_color:
+      - 0.434
+      - 0.401
+      color:
+        x: 0.433
+        y: 0.403
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 3
+      supported_features: 63
+    light.spot_4:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 252
+      color_temp: 103
+      hs_color:
+      - 179.765
+      - 100
+      rgb_color:
+      - 0
+      - 255
+      - 254
+      xy_color:
+      - 0.151
+      - 0.344
+      color:
+        x: 0.151
+        y: 0.344
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 4
+      supported_features: 63
+    light.lightstrip_back:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 253
+      color_temp: 276
+      hs_color:
+      - 40.408
+      - 38.431
+      rgb_color:
+      - 255
+      - 223
+      - 157
+      xy_color:
+      - 0.414
+      - 0.394
+      color:
+        x: 0.414
+        y: 0.394
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Lightstrip Back
+      supported_features: 63
+    switch.monitorlampe:
+      manufacturer: SONOFF
+      model: Micro
+      sw_version: CKA-DM4-GL v3.6.0
+      cloud: online
+      rssi: -43
+      friendly_name: Monitorlampe
+      supported_features: 0
+      state: 'on'
+- id: '1596531583669'
+  name: AZ_LI_NIGHT
+  entities:
+    light.spot_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 51
+      color_temp: 527
+      hs_color:
+      - 30.588
+      - 100
+      rgb_color:
+      - 255
+      - 129
+      - 0
+      xy_color:
+      - 0.61
+      - 0.376
+      color:
+        x: 0.61
+        y: 0.376
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 1
+      supported_features: 63
+    light.spot_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 51
+      color_temp: 527
+      hs_color:
+      - 30.588
+      - 100
+      rgb_color:
+      - 255
+      - 129
+      - 0
+      xy_color:
+      - 0.61
+      - 0.376
+      color:
+        x: 0.61
+        y: 0.376
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 2
+      supported_features: 63
+    light.spot_3:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 51
+      color_temp: 527
+      hs_color:
+      - 30.588
+      - 100
+      rgb_color:
+      - 255
+      - 129
+      - 0
+      xy_color:
+      - 0.61
+      - 0.376
+      color:
+        x: 0.61
+        y: 0.376
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 3
+      supported_features: 63
+    light.spot_4:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 51
+      color_temp: 527
+      hs_color:
+      - 30.588
+      - 100
+      rgb_color:
+      - 255
+      - 129
+      - 0
+      xy_color:
+      - 0.61
+      - 0.376
+      color:
+        x: 0.61
+        y: 0.376
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 4
+      supported_features: 63
+    light.wled:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - Android
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Circus
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Fade
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Merry Christmas
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Police All
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Red & Blue
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running 2
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Chase
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Areas
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      brightness: 51
+      hs_color:
+      - 29.412
+      - 100
+      rgb_color:
+      - 255
+      - 125
+      - 0
+      xy_color:
+      - 0.615
+      - 0.372
+      effect: Solid
+      intensity: 3
+      palette: Default
+      playlist:
+      preset:
+      reverse: false
+      speed: 7
+      friendly_name: WLED
+      icon: mdi:led-strip-variant
+      supported_features: 55
+      type: light-rgb
+      room: arbeitszimmer
+      state: 'on'
+    switch.wled_nightlight:
+      duration: 60
+      fade: true
+      target_brightness: 0
+      friendly_name: WLED Nightlight
+      icon: mdi:weather-night
+      state: 'off'
+    switch.wled_sync_send:
+      udp_port: 21324
+      friendly_name: WLED Sync Send
+      icon: mdi:upload-network-outline
+      state: 'off'
+    switch.wled_sync_receive:
+      udp_port: 21324
+      friendly_name: WLED Sync Receive
+      icon: mdi:download-network-outline
+      state: 'off'
+    light.lightstrip_back:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 64
+      color_temp: 372
+      hs_color:
+      - 44.706
+      - 100
+      rgb_color:
+      - 255
+      - 190
+      - 0
+      xy_color:
+      - 0.528
+      - 0.446
+      color:
+        x: 0.528
+        y: 0.446
+      linkquality: 70
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Lightstrip Back
+      supported_features: 63
+    switch.monitorlampe:
+      manufacturer: SONOFF
+      model: Micro
+      sw_version: CKA-DM4-GL v3.6.0
+      cloud: online
+      rssi: -43
+      friendly_name: Monitorlampe
+      supported_features: 0
+      state: 'on'
+- id: '1596531660253'
+  name: SZ_LI_NIGHT
+  entities:
+    light.kommodenlampe:
+      brightness: 8
+      color_temp: 168
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Slow Temp
+      - Stop
+      flowing: false
+      friendly_name: Kommodenlampe
+      hs_color:
+      - 0
+      - 100
+      max_mireds: 588
+      min_mireds: 153
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.701
+      - 0.299
+    light.nachttischlampe:
+      brightness: 3
+      color_temp: 168
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Slow Temp
+      - Stop
+      flowing: false
+      friendly_name: Nachttischlampe
+      hs_color:
+      - 0
+      - 100
+      max_mireds: 588
+      min_mireds: 153
+      night_light: false
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.701
+      - 0.299
+    light.schreibtischlampe:
+      brightness: 3
+      color_temp: 168
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Slow Temp
+      - Stop
+      flowing: false
+      friendly_name: Schreibtischlampe
+      hs_color:
+      - 0
+      - 100
+      max_mireds: 588
+      min_mireds: 153
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.701
+      - 0.299
+- id: '1596538024849'
+  name: WZ_LI_NIGHT
+  entities:
+    light.bar_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 110
+      color_temp: 222
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      flowing: false
+      night_light: false
+      friendly_name: Bar Decke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'on'
+    light.bar_back:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 13
+      color_temp: 250
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      flowing: false
+      friendly_name: Bar Theke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'on'
+    light.nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Color Burst
+      - Cyberpunk
+      - Flames
+      - Forest
+      - Inner Peace
+      - Nemo
+      - Netflix And Chill
+      - Northern Lights
+      - Romantic
+      - Snowfall
+      brightness: 10
+      effect: Netflix And Chill
+      friendly_name: Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    light.spot_couch:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      flowing: false
+      friendly_name: Spot Couch
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    light.spot_teekueche:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      flowing: false
+      friendly_name: Spot Tee
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    switch.k_lampe:
+      friendly_name: K Lampe
+      state: 'on'
+    light.hue_play01:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 127
+      color_temp: 37
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      color:
+        x: 0.701
+        y: 0.299
+      linkquality: 55
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play01
+      supported_features: 63
+    light.hue_play02:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 127
+      color_temp: 193
+      hs_color:
+      - 0
+      - 84.314
+      rgb_color:
+      - 255
+      - 39
+      - 39
+      xy_color:
+      - 0.677
+      - 0.301
+      color:
+        x: 0.68
+        y: 0.301
+      linkquality: 63
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play02
+      supported_features: 63
+  icon: mdi:weather-night
+- id: '1596559201875'
+  name: WZ_LI_MOVIE
+  entities:
+    light.bar:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      flowing: false
+      night_light: false
+      friendly_name: Bar Hängelampe
+      supported_features: 47
+      type: light-color-temp
+      room: kueche
+      state: 'off'
+    light.bar_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 110
+      color_temp: 222
+      hs_color:
+      - 284.706
+      - 100
+      rgb_color:
+      - 190
+      - 0
+      - 255
+      xy_color:
+      - 0.299
+      - 0.115
+      flowing: false
+      night_light: false
+      friendly_name: Bar Decke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'on'
+    light.bar_back:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 13
+      color_temp: 250
+      hs_color:
+      - 240
+      - 100
+      rgb_color:
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.136
+      - 0.04
+      flowing: false
+      friendly_name: Bar Theke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'on'
+    light.nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Color Burst
+      - Cyberpunk
+      - Flames
+      - Forest
+      - Inner Peace
+      - Nemo
+      - Netflix And Chill
+      - Northern Lights
+      - Romantic
+      - Snowfall
+      brightness: 22
+      effect: Netflix And Chill
+      friendly_name: Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    light.spot_couch:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 240
+      - 100
+      rgb_color:
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.136
+      - 0.04
+      flowing: false
+      friendly_name: Spot Couch
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    light.spot_teekueche:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 254.824
+      - 100
+      rgb_color:
+      - 63
+      - 0
+      - 255
+      xy_color:
+      - 0.157
+      - 0.05
+      flowing: false
+      friendly_name: Spot Tee
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    switch.arbeitsplatte:
+      friendly_name: Arbeitsplatte
+      state: 'off'
+    switch.k_lampe:
+      friendly_name: K Lampe
+      state: 'on'
+    light.hue_play01:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 142
+      color_temp: 65
+      hs_color:
+      - 226.176
+      - 80
+      rgb_color:
+      - 50
+      - 98
+      - 255
+      xy_color:
+      - 0.151
+      - 0.104
+      color:
+        x: 0.149
+        y: 0.098
+      linkquality: 55
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play01
+      supported_features: 63
+    light.hue_play02:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 64
+      color_temp: 582
+      hs_color:
+      - 242.069
+      - 79.608
+      rgb_color:
+      - 58
+      - 51
+      - 255
+      xy_color:
+      - 0.154
+      - 0.065
+      color:
+        x: 0.151
+        y: 0.06
+      linkquality: 65
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play02
+      supported_features: 63
+    light.li_esstisch1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 254
+      color_temp: 153
+      linkquality: 78
+      state: 'off'
+      friendly_name: li_esstisch1
+      supported_features: 47
+    light.li_esstisch_2_light:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 187
+      color_temp: 153
+      linkquality: 68
+      state: 'off'
+      friendly_name: li_esstisch_2_light
+      supported_features: 47
+- id: '1610036464631'
+  name: WZ_LI_DAY
+  entities:
+    switch.k_lampe:
+      friendly_name: K Lampe
+      state: 'on'
+    light.hue_play01:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 252
+      color_temp: 130
+      hs_color:
+      - 242.683
+      - 96.471
+      rgb_color:
+      - 19
+      - 8
+      - 255
+      xy_color:
+      - 0.138
+      - 0.042
+      color:
+        x: 0.137
+        y: 0.041
+      linkquality: 52
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play01
+      supported_features: 63
+    light.hue_play02:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 253
+      color_temp: 37
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      color:
+        x: 0.701
+        y: 0.299
+      linkquality: 57
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play02
+      supported_features: 63
+    light.spot_couch:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 240
+      - 100
+      rgb_color:
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.136
+      - 0.04
+      effect: Slow Temp
+      flowing: true
+      friendly_name: Spot Couch
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    light.spot_teekueche:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 254.824
+      - 100
+      rgb_color:
+      - 63
+      - 0
+      - 255
+      xy_color:
+      - 0.157
+      - 0.05
+      effect: Slow Temp
+      flowing: true
+      friendly_name: Spot Tee
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    light.bar_back:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 105
+      - 72.157
+      rgb_color:
+      - 116
+      - 255
+      - 70
+      xy_color:
+      - 0.247
+      - 0.636
+      effect: Slowdown
+      flowing: true
+      friendly_name: Bar Theke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'on'
+    light.bar:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 213
+      flowing: false
+      night_light: false
+      friendly_name: Bar Hängelampe
+      supported_features: 47
+      type: light-color-temp
+      room: kueche
+      state: 'on'
+    light.bar_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 222
+      hs_color:
+      - 284.706
+      - 100
+      rgb_color:
+      - 190
+      - 0
+      - 255
+      xy_color:
+      - 0.299
+      - 0.115
+      flowing: false
+      night_light: false
+      friendly_name: Bar Decke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'on'
+    light.nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Color Burst
+      - Cyberpunk
+      - Flames
+      - Forest
+      - Inner Peace
+      - Nemo
+      - Netflix And Chill
+      - Northern Lights
+      - Romantic
+      - Snowfall
+      brightness: 254
+      effect: Inner Peace
+      friendly_name: Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+- id: '1610057647139'
+  name: WZ_LI_ALL_OFF
+  entities:
+    light.hue_play01:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 251
+      color:
+        x: 0.138
+        y: 0.042
+      color_temp: 130
+      linkquality: 81
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play01
+      supported_features: 63
+    light.hue_play02:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 252
+      color:
+        x: 0.701
+        y: 0.299
+      color_temp: 37
+      linkquality: 73
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play02
+      supported_features: 63
+    light.spot_couch:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      flowing: true
+      friendly_name: Spot Couch
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'off'
+    light.spot_teekueche:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      flowing: true
+      friendly_name: Spot Tee
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'off'
+    light.bar_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      flowing: false
+      night_light: false
+      friendly_name: Bar Decke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'off'
+    light.bar:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      flowing: false
+      night_light: false
+      friendly_name: Bar Hängelampe
+      supported_features: 47
+      type: light-color-temp
+      room: kueche
+      state: 'off'
+    light.bar_back:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      flowing: true
+      friendly_name: Bar Theke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'off'
+    switch.k_lampe:
+      friendly_name: K Lampe
+      state: 'off'
+    switch.arbeitsplatte:
+      friendly_name: Arbeitsplatte
+      state: 'off'
+    light.li_esstisch1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 254
+      color_temp: 153
+      linkquality: 78
+      state: 'off'
+      friendly_name: li_esstisch1
+      supported_features: 47
+    light.li_esstisch_2_light:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 187
+      color_temp: 153
+      linkquality: 76
+      state: 'off'
+      friendly_name: li_esstisch_2_light
+      supported_features: 47
+    light.nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Color Burst
+      - Cyberpunk
+      - Flames
+      - Forest
+      - Inner Peace
+      - Nemo
+      - Netflix And Chill
+      - Northern Lights
+      - Romantic
+      - Snowfall
+      friendly_name: Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      type: light-rgb
+      room: wohnzimmer
+      state: 'off'
+- id: '1610134800580'
+  name: AZ_GAMING
+  entities:
+    light.spot_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 251
+      color:
+        x: 0.405
+        y: 0.39
+      color_temp: 272
+      linkquality: 89
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 1
+      supported_features: 63
+    light.spot_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 250
+      color_temp: 128
+      hs_color:
+      - 242.4
+      - 88.235
+      rgb_color:
+      - 39
+      - 30
+      - 255
+      xy_color:
+      - 0.145
+      - 0.051
+      color:
+        x: 0.142
+        y: 0.047
+      linkquality: 34
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 2
+      supported_features: 63
+    light.spot_3:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 251
+      color:
+        x: 0.434
+        y: 0.401
+      color_temp: 266
+      linkquality: 73
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 3
+      supported_features: 63
+    light.spot_4:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 250
+      color_temp: 37
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      color:
+        x: 0.701
+        y: 0.299
+      linkquality: 63
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Spot 4
+      supported_features: 63
+    light.wled:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - Android
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Circus
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Fade
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Merry Christmas
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Police All
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Red & Blue
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running 2
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Chase
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Areas
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      brightness: 204
+      hs_color:
+      - 358.974
+      - 45.882
+      rgb_color:
+      - 255
+      - 138
+      - 140
+      xy_color:
+      - 0.501
+      - 0.313
+      effect: Breathe
+      intensity: 3
+      palette: Default
+      playlist:
+      preset:
+      reverse: false
+      speed: 7
+      friendly_name: WLED
+      icon: mdi:led-strip-variant
+      supported_features: 55
+      type: light-rgb
+      room: arbeitszimmer
+      state: 'on'
+    switch.wled_nightlight:
+      duration: 60
+      fade: true
+      target_brightness: 0
+      friendly_name: WLED Nightlight
+      icon: mdi:weather-night
+      state: 'off'
+    switch.wled_sync_send:
+      udp_port: 21324
+      friendly_name: WLED Sync Send
+      icon: mdi:upload-network-outline
+      state: 'off'
+    switch.wled_sync_receive:
+      udp_port: 21324
+      friendly_name: WLED Sync Receive
+      icon: mdi:download-network-outline
+      state: 'off'
+    light.lightstrip_back:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 64
+      color_temp: 390
+      hs_color:
+      - 272.381
+      - 98.824
+      rgb_color:
+      - 138
+      - 2
+      - 255
+      xy_color:
+      - 0.23
+      - 0.084
+      color:
+        x: 0.227
+        y: 0.082
+      linkquality: 86
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Lightstrip Back
+      supported_features: 63
+    switch.monitorlampe:
+      manufacturer: SONOFF
+      model: Micro
+      sw_version: CKA-DM4-GL v3.6.0
+      cloud: online
+      rssi: -43
+      friendly_name: Monitorlampe
+      supported_features: 0
+      state: 'on'
+  icon: mdi:gamepad-variant
+- id: '1610151224197'
+  name: WZ_Esstisch_Overwrite
+  entities:
+    light.li_esstisch1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 254
+      color_temp: 153
+      linkquality: 84
+      state: 'on'
+      friendly_name: li_esstisch1
+      supported_features: 47
+    light.li_esstisch_2_light:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 254
+      color_temp: 153
+      linkquality: 63
+      state: 'on'
+      friendly_name: li_esstisch_2_light
+      supported_features: 47
+- id: '1610151486039'
+  name: WZ_MOVIE_Wohnzimmer
+  entities:
+    light.nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Color Burst
+      - Cyberpunk
+      - Flames
+      - Forest
+      - Inner Peace
+      - Nemo
+      - Netflix And Chill
+      - Northern Lights
+      - Romantic
+      - Snowfall
+      brightness: 17
+      effect: Netflix And Chill
+      friendly_name: Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    light.hue_play01:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 140
+      color_temp: 316
+      hs_color:
+      - 225.538
+      - 76.471
+      rgb_color:
+      - 59
+      - 107
+      - 255
+      xy_color:
+      - 0.156
+      - 0.116
+      color:
+        x: 0.154
+        y: 0.11
+      linkquality: 60
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play01
+      supported_features: 63
+    light.hue_play02:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 64
+      color_temp: 727
+      hs_color:
+      - 241.257
+      - 74.902
+      rgb_color:
+      - 68
+      - 63
+      - 255
+      xy_color:
+      - 0.161
+      - 0.075
+      color:
+        x: 0.157
+        y: 0.07
+      linkquality: 60
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play02
+      supported_features: 63
+    light.spot_couch:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 240
+      - 100
+      rgb_color:
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.136
+      - 0.04
+      flowing: false
+      friendly_name: Spot Couch
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    switch.k_lampe:
+      friendly_name: K Lampe
+      state: 'on'
+- id: '1610151523122'
+  name: WZ_MOVIE_Esstisch
+  entities:
+    light.li_esstisch1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 253
+      color_temp: 153
+      linkquality: 86
+      state: 'off'
+      friendly_name: li_esstisch1
+      supported_features: 47
+    light.li_esstisch_2_light:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 253
+      color_temp: 153
+      linkquality: 57
+      state: 'off'
+      friendly_name: li_esstisch_2_light
+      supported_features: 47
+- id: '1610151598232'
+  name: WZ_MOVIE_Küche
+  entities:
+    light.bar_back:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 13
+      color_temp: 250
+      hs_color:
+      - 240
+      - 100
+      rgb_color:
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.136
+      - 0.04
+      flowing: false
+      friendly_name: Bar Theke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'on'
+    light.bar:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      flowing: false
+      night_light: false
+      friendly_name: Bar Hängelampe
+      supported_features: 47
+      type: light-color-temp
+      room: kueche
+      state: 'off'
+    switch.arbeitsplatte:
+      friendly_name: Arbeitsplatte
+      state: 'off'
+    light.spot_teekueche:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 254.824
+      - 100
+      rgb_color:
+      - 63
+      - 0
+      - 255
+      xy_color:
+      - 0.157
+      - 0.05
+      flowing: false
+      friendly_name: Spot Tee
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+- id: '1610153475976'
+  name: WZ_DAY_Wohnzimmer
+  entities:
+    light.nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Color Burst
+      - Cyberpunk
+      - Flames
+      - Forest
+      - Inner Peace
+      - Nemo
+      - Netflix And Chill
+      - Northern Lights
+      - Romantic
+      - Snowfall
+      brightness: 252
+      effect: Inner Peace
+      friendly_name: Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    switch.k_lampe:
+      friendly_name: K Lampe
+      state: 'on'
+    light.spot_couch:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 240
+      - 100
+      rgb_color:
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.136
+      - 0.04
+      effect: Slow Temp
+      flowing: true
+      friendly_name: Spot Couch
+      supported_features: 63
+      type: light-rgb
+      room: wohnzimmer
+      state: 'on'
+    light.hue_play01:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 250
+      color_temp: 122
+      hs_color:
+      - 242.833
+      - 91.373
+      rgb_color:
+      - 33
+      - 21
+      - 255
+      xy_color:
+      - 0.142
+      - 0.047
+      color:
+        x: 0.14
+        y: 0.044
+      linkquality: 57
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play01
+      supported_features: 63
+    light.hue_play02:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 251
+      color_temp: 37
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      color:
+        x: 0.701
+        y: 0.299
+      linkquality: 81
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: hue_play02
+      supported_features: 63

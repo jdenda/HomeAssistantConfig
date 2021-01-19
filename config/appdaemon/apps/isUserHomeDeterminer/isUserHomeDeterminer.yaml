@@ -1,0 +1,17 @@
+#Determine if user one gets/leaves home
+isUserHomeDeterminerUserJanneck:
+  module: isUserHomeDeterminer
+  class: IsUserHomeDeterminer
+  app_switch: input_boolean.is_user_home_determiner_janneck
+  input_boolean: input_boolean.user_home_janneck
+  device_tracker: person.janneck
+  door_sensor: binary_sensor.door_apartment_contact
+
+#Determine if user two gets/leaves home
+isUserHomeDeterminerUserLuca:
+  module: isUserHomeDeterminer
+  class: IsUserHomeDeterminer
+  app_switch: input_boolean.is_user_home_determiner_luca
+  input_boolean: input_boolean.user_home_luca
+  device_tracker: person.luca
+  door_sensor: binary_sensor.door_apartment_contact

@@ -1,0 +1,60 @@
+config:
+  title: Home
+  views:
+  - badges: []
+    cards: []
+    path: home
+    title: home
+  - badges: []
+    cards:
+    - entities:
+      - entities:
+        - binary_sensor.hue_play01_update_available
+        - sensor.hue_play01_linkquality
+        - sensor.hue_play01_update_state
+        head: light.hue_play01
+        type: custom:fold-entity-row
+      - entities:
+        - binary_sensor.hue_play02_update_available
+        - sensor.hue_play02_linkquality
+        - sensor.hue_play02_update_state
+        head: light.hue_play02
+        type: custom:fold-entity-row
+      - light.nanoleaf
+      - light.spot_couch
+      - switch.k_lampe
+      title: Lichter
+      type: entities
+    - aspect_ratio: '0.6'
+      background_color: '#423838'
+      entity: fan.xiaomi_smart_fan
+      name: Ventilator
+      type: custom:fan-xiaomi
+    - entities:
+      - entities:
+        - media_player.onkyo_receiver_zone_2
+        - switch.receiver_2_power
+        head: media_player.onkyo_receiver
+        type: custom:fold-entity-row
+      - entities:
+        - media_player.onkyo_receiver_zone_2
+        - switch.receiver_2_power
+        head: media_player.shield_tv
+        type: custom:fold-entity-row
+      - entities:
+        - switch.beamer_pow
+        - switch.beamer_hdmi
+        head: switch.beamer_power
+        type: custom:fold-entity-row
+      title: "Ger\xE4te"
+      type: entities
+    - entity: media_player.shield_tv
+      name: Shield TV
+      power:
+        service: switch.turn_on
+        service_data:
+          entity_id: switch.bedroom_tv_power
+      tv: true
+      type: custom:tv-card
+    path: livingroom
+    title: livingroom

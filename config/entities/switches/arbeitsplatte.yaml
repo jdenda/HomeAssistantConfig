@@ -1,0 +1,6 @@
+platform: mqtt
+name: "Arbeitsplatte"
+command_topic: "cmnd/sf_kueche/power"
+state_topic: "stat/sf_kueche/POWER"
+payload_on: "ON"
+payload_off: "OFF"

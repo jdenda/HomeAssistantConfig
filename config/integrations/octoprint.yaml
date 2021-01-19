@@ -1,0 +1,3 @@
+octoprint:
+  host: !secret octoprint_ip
+  api_key: !secret octoprint_key

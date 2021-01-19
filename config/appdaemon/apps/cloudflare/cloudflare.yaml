@@ -1,0 +1,8 @@
+cloudflare:
+  module: cloudflare
+  class: Cloudflare
+  api_token: XhGS0bmE_GG2xrv1vyo7mmnXFvIyNYXNSabbUC8u
+  global_token: 933a6cbf0c37330bd8168cea55449ed2aaf6b
+  zone: 48b5582eb8945419a7dec55c6d1fd608
+  email: janneck.denda@gmail.com
+  timer: 60

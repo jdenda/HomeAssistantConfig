@@ -1,0 +1,3 @@
+platform: ffmpeg
+name: Couch Cam
+input: !secret wz_cam

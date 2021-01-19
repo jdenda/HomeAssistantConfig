@@ -1,0 +1,5 @@
+platform: xiaomi_miio_fan
+name: Xiaomi Smart Fan
+host: !secret wz_fan_ip
+token: !secret  wz_fan_token
+model: zhimi.fan.za4

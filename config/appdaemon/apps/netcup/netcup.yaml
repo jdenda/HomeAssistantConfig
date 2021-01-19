@@ -1,0 +1,7 @@
+neetcup:
+  module: netcup
+  class: Netcup
+  scp_user: 92938
+  scp_api_passw: bingo147
+  timer: 60
+  enable_singe_sensors: true

@@ -1,0 +1,4 @@
+platform: mqtt
+name: "K Lampe"
+command_topic: "cmnd/sonoffklampe/power"
+state_topic: "stat/sonoffklampe/POWER"

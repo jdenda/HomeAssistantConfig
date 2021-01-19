@@ -1,0 +1,8 @@
+# platform: rest
+# name: Frigate Debug
+# resource: !secret frigate_url
+# scan_interval: 5
+# json_attributes:
+#   - Shield_cam
+#   - coral
+# value_template: 'OK'

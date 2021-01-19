@@ -1,0 +1,3 @@
+name: janneck_telegram
+platform: telegram
+chat_id: !secret janneck_chat_id

@@ -1,0 +1,11 @@
+platform: template
+sensors:
+  alarm_time:
+      friendly_name: 'Time'
+      value_template: >-
+           {{ "%0.02d-%0.02d-%0.02d %0.02d:%0.02d:00" | format(now().year | int, now().month | int, now().day | int, states("input_number.alarm_1_hour") | int, states("input_number.alarm_1_minutes") | int) }}
+      # entity_id: 
+      #   - sensor.time
+      #   - sensor.date
+      #   - input_number.alarm_1_minutes
+      #   - input_number.alarm_1_hour

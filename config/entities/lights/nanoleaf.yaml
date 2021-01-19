@@ -1,0 +1,4 @@
+platform: nanoleaf
+host: !secret nanoleaf_ip
+token: !secret nanoleaf_token
+name: Nanoleaf

@@ -1,0 +1,7 @@
+appWatcher:
+  module: appWatcher
+  class: AppWatcher
+  notify_name: kevin
+  notify_message: "AppDaemon error: {}"
+  notifier: notify/janneck_telegram
+  #notify_message: "Appdaemon reported an error: {}"

@@ -1,0 +1,10 @@
+# platform: template
+# sensors:
+#   picnic_order_last_chance:
+#     friendly_name: "Picnic letzte Chance"
+#     value_template: '{{as_timestamp(states.sensor.picnic_delivery.attributes["delivery"]["cut_off_time"]) | timestamp_custom ("%d-%m-%Y %H:%M") }}'
+
+#   picnic_liefer_zeit_anfang:
+#     friendly_name: "Picnic Lieferzeitfenster Start"
+#     icon_template: mdi:clock-outline
+#     value_template: '{{as_timestamp(states.sensor.picnic_delivery.attributes["delivery"]["window_start"]) | timestamp_custom ("%d-%m-%Y %H:%M") }}'

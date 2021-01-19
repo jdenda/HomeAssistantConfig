@@ -1,0 +1,7 @@
+platform: template
+sensors:
+  bathroom_dusche_last1:
+    value_template: >- 
+      {{ (as_timestamp(now())- as_timestamp(states.binary_sensor.door_shower_contact.last_changed)) < 60 }}
+    friendly_name: Dusche in Last 1min
+    device_class: motion

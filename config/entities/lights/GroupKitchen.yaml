@@ -1,0 +1,9 @@
+platform: group
+name: Kitchen Lights
+entities:
+  - light.spot_teekueche
+  - light.bar
+  - light.bar_ambilight
+  - light.bar_back
+  - light.li_esstisch1
+  - light.li_esstisch_2_light

@@ -1,0 +1,87 @@
+SchlafzimmerBasedLights:
+  module: basedlights
+  class: BasedLights
+  app_switch: input_boolean.appswitch_motion_schlafzimmer # turns app on/off
+  switches:  # switches which should be turned on and off
+  lights_brightness: # switches which should be turned on and off
+  lights_color_temp: # switches which should be turned on and off
+  lights_color_rgb:
+    - "light.kommodenlampe"
+    - "light.nachttischlampe"
+    - "light.schreibtischlampe"
+  motion_sensor: binary_sensor.sz_motion_occupancy # conditional trigger for on and off 
+  baynesian_sensor: # conditional trigger for on and off 
+  brightness_sensor: sensor.sz_motion_illuminance # brightness sensor
+  brightness_value: 130 # Turns lights on below value xxx
+  adaptive_light: switch.adaptive_lighting_schlafzimmer
+  nightmode: input_boolean.nightmode
+
+# FlurBasedLights:
+#   module: basedlights
+#   class: BasedLights
+#   app_switch: input_boolean.appswitch_motion_flur # turns app on/off
+#   switches:  # switches which should be turned on and off
+#   lights_brightness: # switches which should be turned on and off
+#   lights_color_temp: 
+#     - "light.flurlicht" # switches which should be turned on and off
+#   lights_color_rgb:
+#   motion_sensor: binary_sensor.fl_motion_occupancy # conditional trigger for on and off 
+#   baynesian_sensor: # conditional trigger for on and off 
+#   brightness_sensor: # brightness sensor
+#   brightness_value: # Turns lights on below value xxx
+#   adaptive_light: switch.adaptive_lighting_schlafzimmer
+#   nightmode: input_boolean.nightmode
+
+BadBasedLights:
+  module: basedlights
+  class: BasedLights
+  app_switch: input_boolean.appswitch_motion_bad # turns app on/off
+  switches: 
+    - "switch.bad_lichtschalter" # switches which should be turned on and off
+  lights_brightness: 
+    - "light.schreibtisch_backlight" # switches which should be turned on and off
+  lights_color_temp: # switches which should be turned on and off
+  lights_color_rgb:
+  motion_sensor: binary_sensor.0x00158d00036b9e63_occupancy # conditional trigger for on and off 
+  baynesian_sensor: binary_sensor.baynesian_badezimmer # conditional trigger for on and off 
+  brightness_sensor: sensor.0x00158d00036b9e63_illuminance # brightness sensor
+  brightness_value: 150 # Turns lights on below value xxx
+  adaptive_light: switch.adaptive_lighting_badezimmer
+  nightmode: input_boolean.nightmode
+  on_scene: 
+  off_scene: 
+
+# ArbeitszimmerBasedLights:
+#   module: basedlights
+#   class: BasedLights
+#   app_switch: input_boolean.appswitch_motion_arbeitszimmer # turns app on/off
+#   switches: # switches which should be turned on and off
+#   lights_brightness:  # switches which should be turned on and off
+#   lights_color_temp: # switches which should be turned on and off
+#   lights_color_rgb:
+#   motion_sensor: binary_sensor.az_motion_occupancy # conditional trigger for on and off 
+#   baynesian_sensor: binary_sensor.arbeitszimmer # conditional trigger for on and off 
+#   brightness_sensor: sensor.az_motion_illuminance # brightness sensor
+#   brightness_value: 150 # Turns lights on below value xxx
+#   adaptive_light: switch.adaptive_lighting_badezimmer
+#   nightmode: input_boolean.nightmode
+#   on_scene: scene.az_li_on
+#   off_scene: scene.az_li_off
+
+#WohnzimmerBasedLights:
+#  module: basedlights
+#  class: BasedLights
+#  app_switch: input_boolean.appswitch_motion_wohnzimmer # turns app on/off
+#  switches: # switches which should be turned on and off
+#  lights_brightness:  # switches which should be turned on and off
+#  lights_color_temp: # switches which should be turned on and off
+#  lights_color_rgb:
+#  motion_sensor: binary_sensor.wz_motion_occupancy # conditional trigger for on and off 
+#  baynesian_sensor: binary_sensor.baynesian_wohnzimmer # conditional trigger for on and off 
+#  brightness_sensor: sensor.wz_motion_illuminance # brightness sensor
+#  brightness_value: 150 # Turns lights on below value xxx
+#  adaptive_light: switch.adaptive_lighting_wohnzimmer
+#  nightmode: input_boolean.nightmode
+#  on_scene: script.wz_li_day
+#  night_scene: scene.wz_li_night
+#  off_scene: scene.wz_li_all_off

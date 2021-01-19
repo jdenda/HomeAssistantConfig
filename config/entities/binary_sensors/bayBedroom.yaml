@@ -1,0 +1,15 @@
+  name: 'Baynesian Schlafzimmer'
+  platform: 'bayesian'
+  prior: 0.60
+  probability_threshold: 0.80
+  observations:
+    - platform: 'state'
+      entity_id: binary_sensor.sz_motion_occupancy
+      prob_given_true: 0.90
+      prob_given_false: 0.05
+      to_state: 'on'
+    - platform: 'state'
+      entity_id: input_boolean.nightmode
+      prob_given_true: 0.90
+      prob_given_false: 0.05
+      to_state: 'on'

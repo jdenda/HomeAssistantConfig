@@ -1,0 +1,6 @@
+platform: wake_on_lan
+mac: !secret mac_r5
+name: PC Janneck
+host: !secret ip_r5
+turn_off:
+  service: script.az_shutdown_pc

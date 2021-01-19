@@ -1,0 +1,79 @@
+mediaPlayer:
+  module: mediaPlayer
+  class: MediaPlayer
+  player: media_player.spotify_dolphinxid99
+  master: media_player.wohnung
+  volume: input_number.volume
+  global_dependencies:
+    - globals
+
+mediaPlayerStartPlayback:
+  module: mediaPlayer
+  class: MediaPlayerStartPlayback
+  # dependencies: 
+  #   - Notifier
+  global_dependencies:
+    - globals
+
+mediaPlayerAdjustLivingroom:
+  module: mediaPlayer
+  class: MediaPlayerAdjust
+  player: media_player.onkyo_receiver
+  presence: binary_sensor.baynesian_wohnzimmer
+  delay: 300
+  volume: input_number.volume
+  master: media_player.wohnung
+
+# mediaPlayerAdjustKitchen:
+#   module: mediaPlayer
+#   class: MediaPlayerAdjust
+#   player: media_player.tab_kuche
+#   presence: binary_sensor.baynesian_wohnzimmer
+#   delay: 300
+#   volume: input_number.volume
+#   master: media_player.wohnung
+
+mediaPlayerAdjustBath:
+  module: mediaPlayer
+  class: MediaPlayerAdjust
+  player: media_player.bad
+  presence: binary_sensor.baynesian_badezimmer
+  delay: 300
+  volume: input_number.volume
+  master: media_player.wohnung
+
+mediaPlayerAdjustBedroom:
+  module: mediaPlayer
+  class: MediaPlayerAdjust
+  player: media_player.schlafzimmer
+  presence: binary_sensor.baynesian_schlafzimmer
+  delay: 300
+  volume: input_number.volume
+  master: media_player.wohnung
+
+mediaPlayerAdjustHall:
+  module: mediaPlayer
+  class: MediaPlayerAdjust
+  player: media_player.flur
+  presence: binary_sensor.fl_motion_occupancy
+  delay: 300
+  volume: input_number.volume
+  master: media_player.wohnung
+
+mediaPlayerAdjustOffice:
+  module: mediaPlayer
+  class: MediaPlayerAdjust
+  player: media_player.lenovosmartdisplay80269
+  presence: binary_sensor.baynesian_wohnzimmer
+  delay: 300
+  volume: input_number.volume
+  master: media_player.wohnung
+
+mediaPlayerAdjustOffice_new:
+  module: mediaPlayer
+  class: MediaPlayerAdjust
+  player: media_player.chromecastaudio4823
+  presence: binary_sensor.baynesian_arbeitszimmer
+  delay: 300
+  volume: input_number.volume
+  master: media_player.wohnung

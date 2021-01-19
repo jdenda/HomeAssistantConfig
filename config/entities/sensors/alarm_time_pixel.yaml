@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  alarm_time_pixel:
+      friendly_name: 'Time'
+      value_template: >-
+        {{as_timestamp(states.sensor.pixel_4_xl_next_alarm.state) | timestamp_custom("%Y-%m-%d %X")}}

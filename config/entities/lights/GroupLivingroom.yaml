@@ -1,0 +1,7 @@
+platform: group
+name: Livingroom Lights
+entities:
+  - light.spot_couch
+  - light.nanoleaf
+  - light.hue_play01
+  - light.hue_play02

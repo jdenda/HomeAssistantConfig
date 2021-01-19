@@ -1,0 +1,9 @@
+platform: group
+name: Office Lights
+entities:
+  - light.spot_4
+  - light.spot_3
+  - light.spot_2
+  - light.spot_1
+  - light.wled
+  - light.lightstrip_back

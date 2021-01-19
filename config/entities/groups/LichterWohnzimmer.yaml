@@ -1,0 +1,11 @@
+lights_wohnzimmer:
+  name: Lichter
+  entities:
+    - light.nanoleaf
+    - light.spot_couch
+    - light.spot_teekueche
+    - light.bar
+    - light.bar_ambilight
+    - light.bar_back
+    - light.esstisch1
+    - light.esstisch2

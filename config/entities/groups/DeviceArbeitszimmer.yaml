@@ -1,0 +1,6 @@
+devices_arbeitszimmer:
+  name: Device
+  entities:
+    - switch.pc_janneck
+    - switch.tv_s20_relay
+    - switch.dash_monitor_relay

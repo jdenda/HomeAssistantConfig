@@ -1,0 +1,57 @@
+######################################################  
+##                                                  ##
+##                    definition                    ##
+##                                                  ##
+######################################################
+#
+# The light component allows you to track and control various yeelights.
+# This loads up my yeelight configurations.
+#
+# https://www.home-assistant.io/components/yeelight/
+#
+######################################################  
+##                                                  ##
+##                   begin of config                ##
+##                                                  ##
+######################################################
+yeelight:
+  devices:
+    # 11.1.1.39:
+    #   name: Lichtstreifentheke
+    #   model: strip1
+    #   transition: 1500
+    11.1.1.36:
+      name: Spot Couch
+      model: color1
+      transition: 1500
+    11.1.1.178:
+      name: Spot Teeküche
+      model: color1
+      transition: 1500
+    11.1.1.44:
+      name: Flurlicht
+      model: ceiling1
+    11.1.1.18:
+      name: Schreibtischlampe
+      model: color1
+    11.1.1.233:
+      name: Nachttischlampe
+      model: bslamp1
+    11.1.1.45:
+      name: Kommodenlampe
+      model: color1
+    11.1.1.207:
+      name: Bar
+      model: ceiling4
+    11.1.1.39:
+      name: Bar Backlight
+    # 11.1.1.139:
+    #   name: Esstisch1
+    # 11.1.1.49:
+    #   name: Esstisch2
+
+######################################################  
+##                                                  ##
+##                     end of config                ##
+##                                                  ##
+######################################################

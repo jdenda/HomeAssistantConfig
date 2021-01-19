@@ -1,0 +1,382 @@
+wz_fan_speed:
+  alias: WZ_FAN_SPEED
+  icon: mdi:fan
+  mode: single
+  sequence:
+  - data:
+      entity_id: fan.xiaomi_smart_fan
+      speed: '{{states("sensor.fan_speed")|int}}'
+    entity_id: fan.xiaomi_smart_fan
+    service: fan.set_speed
+wz_tv_all_off:
+  alias: WZ_TV_ALL_OFF
+  mode: restart
+  sequence:
+  - data: {}
+    entity_id: switch.beamer_pow
+    service: switch.toggle
+  - delay: 00:00:02
+  - data: {}
+    entity_id: switch.beamer_pow
+    service: switch.toggle
+  - data: {}
+    entity_id: switch.beamer_pow
+    service: switch.toggle
+  - delay: 00:00:02
+  - data: {}
+    entity_id: switch.receiver_2_power
+    service: switch.turn_off
+  - delay: 00:02:00
+  - data: {}
+    entity_id: switch.beamer_power
+    service: switch.turn_off
+cf_all_off:
+  alias: CF_ALL_OFF
+  mode: single
+  sequence:
+  - data: {}
+    entity_id: group.all_lights
+    service: homeassistant.turn_off
+  - data: {}
+    entity_id: group.all_fans
+    service: homeassistant.turn_off
+  icon: mdi:power
+az_shutdown_pc:
+  alias: AZ_Shutdown_PC
+  mode: single
+  sequence:
+  - data:
+      payload: ''
+      topic: iotlink/workgroup/r5-janneck/commands/shutdown
+    service: mqtt.publish
+az_firewatch:
+  alias: AZ_Firewatch
+  mode: single
+  sequence:
+  - data:
+      group_name: Arbeitszimmer
+      scene_name: Firewatch
+    service: hue.hue_activate_scene
+  - data:
+      brightness_pct: 80
+    entity_id: light.wled
+    service: light.turn_on
+cf_start_playback:
+  alias: CF_start_playback
+  icon: mdi:speaker
+  mode: single
+  sequence:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.beamer_power
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.3
+    entity_id: media_player.onkyo_receiver
+  - data:
+      volume_level: 0.2
+    entity_id: media_player.bad
+    service: media_player.volume_set
+  - data:
+      volume_level: 1
+    entity_id: media_player.chromecastaudio4823
+    service: media_player.volume_set
+  - data:
+      volume_level: 0.2
+    entity_id: media_player.flur
+    service: media_player.volume_set
+  - data:
+      volume_level: 0.2
+    entity_id: media_player.lenovosmartdisplay80269
+    service: media_player.volume_set
+  - data:
+      volume_level: 0.2
+    entity_id: media_player.schlafzimmer
+    service: media_player.volume_set
+  - data_template:
+      device_name: '{{ states(''input_select.playback_devices'') }}
+
+        '
+      force_playback: 'true'
+      random_song: 'true'
+      uri: '{% if is_state("input_select.playlists", "Chillige Mukke") %} spotify:playlist:6AhyBQ1xh1j4BlUceNvvHV
+        {% elif is_state("input_select.playlists", "Bissle EDM") %} spotify:playlist:3aF8i7MxctGjRTXQB39q0d
+        {% elif is_state("input_select.playlists", "Synthwave") %} spotify:playlist:1Enu5RV7gNw6WBQEYl2Goo
+        {% elif is_state("input_select.playlists", "Mainstage") %} spotify:playlist:37i9dQZF1DX7ZUug1ANKRP
+        {% elif is_state("input_select.playlists", "Guten Morgen") %} spotify:playlist:1V4SdE3VyZBkVduJecuT17
+        {% elif is_state("input_select.playlists", "Bissle mehr EDM") %} spotify:playlist:0nAbn24SXFwWBqoXHEFoCv
+        {% endif %}
+
+        '
+    service: spotcast.start
+  - service: input_number.set_value
+    data:
+      value: 25
+    entity_id: input_number.volume
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: input_select.playback_devices
+      state: Wohnzimmer
+    - condition: state
+      entity_id: input_select.playback_devices
+      state: Wohnung
+wz_li_day:
+  alias: WZ_LI_Day
+  icon: mdi:lightbulb
+  mode: restart
+  sequence:
+  - entity_id: switch.arbeitsplatte
+    service: switch.turn_on
+  - entity_id: switch.k_lampe
+    service: switch.turn_on
+  - data:
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''brightness_pct'')
+        | int }}
+
+        '
+      effect: Slow Temp
+    service: light.turn_on
+    entity_id: light.bar_ambilight
+  - data:
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''brightness_pct'')
+        | int }}
+
+        '
+      effect: Slow Temp
+    service: light.turn_on
+    entity_id: light.spot_couch
+  - data:
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''brightness_pct'')
+        | int }}
+
+        '
+      effect: Slow Temp
+    service: light.turn_on
+    entity_id: light.spot_teekueche
+  - data:
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''brightness_pct'')
+        | int }}
+
+        '
+      kelvin: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''color_temp_kelvin'')
+        | int }}
+
+        '
+    service: light.turn_on
+    entity_id: light.bar
+  - data:
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''brightness_pct'')
+        | int }}
+
+        '
+      kelvin: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''color_temp_kelvin'')
+        | int }}
+
+        '
+    service: light.turn_on
+    entity_id: light.esstisch1
+  - data:
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''brightness_pct'')
+        | int }}
+
+        '
+      effect: Slowdown
+    service: light.turn_on
+    entity_id: light.bar_back
+  - service: light.turn_on
+    data:
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''brightness_pct'')
+        | int }}
+
+        '
+      effect: Inner Peace
+    entity_id: light.nanoleaf
+cf_automations_off:
+  alias: CF_automations_off
+  sequence:
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.all_automations
+  - delay: 00:00:10
+  - service: automation.turn_on
+    data: {}
+    entity_id: automation.cf_holiday
+  mode: single
+wz_li:
+  alias: WZ_LI
+  sequence:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.arbeitsplatte
+  - service: light.turn_on
+    entity_id: light.bar
+    data:
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''brightness_pct'')
+        | int }}
+
+        '
+      kelvin: '{{ state_attr(''switch.adaptive_lighting_wohnzimmer'', ''color_temp_kelvin'')
+        | int }}
+
+        '
+  mode: single
+checkkaffee:
+  alias: CheckKaffee
+  sequence:
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.bed
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.kaffee_vorbereitet
+        state: 'off'
+      sequence:
+      - service: notify.mobile_app_pixel_4_xl
+        data:
+          title: Kaffeemaschine
+          message: Wurde nicht vorbereitet, kein Kaffee gekocht!
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.kaffee_vorbereitet
+        state: 'on'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.kleine_tasse
+      - service: notify.mobile_app_pixel_4_xl
+        data:
+          title: Kaffeemaschine
+          message: Kaffee wird gekocht!
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.kaffee_vorbereitet
+    default:
+    - service: input_boolean.turn_off
+      data: {}
+      entity_id: input_boolean.kaffee_vorbereitet
+  mode: single
+  icon: mdi:coffee
+cf_gute_nacht:
+  alias: CF_GUTE_NACHT
+  sequence:
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.nightmode
+  - service: input_select.select_option
+    data:
+      option: Wohnung
+    entity_id: input_select.playback_devices
+  - service: input_select.select_option
+    data:
+      option: Synthwave
+    entity_id: input_select.playlists
+  - service: script.cf_start_playback
+    data: {}
+  mode: single
+  icon: mdi:lightbulb
+wz_li_2:
+  alias: WZ_LI
+  sequence:
+  - condition: numeric_state
+    entity_id: sensor.wz_motion_illuminance
+    below: '150'
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'on'
+      sequence: []
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'off'
+      sequence:
+      - choose:
+        - conditions:
+          - condition: state
+            entity_id: media_player.shield_tv
+            state: 'off'
+          sequence:
+          - service: script.wz_li_day
+        - conditions:
+          - condition: state
+            entity_id: media_player.shield_tv
+            state: idle
+          sequence:
+          - service: script.wz_li_day
+            data: {}
+        - conditions:
+          - condition: state
+            entity_id: media_player.shield_tv
+            state: playing
+          sequence:
+          - service: scene.turn_on
+            data: {}
+            entity_id: scene.wz_li_movie
+        default: []
+    default: []
+  mode: single
+wz_notify_action:
+  alias: WZ_NOTIFY_ACTION
+  sequence:
+  - service: light.turn_on
+    data:
+      effect: breathe
+    entity_id: light.hue_play01
+  - delay: 00:00:02
+  - service: light.turn_on
+    data:
+      effect: finish_effect
+    entity_id: light.hue_play01
+  mode: single
+wz_movie_esstisch:
+  alias: WZ_MOVIE_Esstisch
+  sequence:
+  - scene: scene.wz_movie_esstisch
+  mode: single
+wz_movie_wohnzimmer:
+  alias: WZ_Movie_Wohnzimmer
+  sequence:
+  - scene: scene.wz_movie_wohnzimmer
+  mode: single
+wz_movie_kuche:
+  alias: WZ_Movie_Küche
+  sequence:
+  - scene: scene.wz_movie_kuche
+  mode: single
+placeholder:
+  alias: placeholder
+  sequence:
+  - service: input_boolean.toggle
+    data: {}
+    entity_id: input_boolean.dummy1
+  mode: single
+flurlicht_select_scene:
+  alias: Flurlicht_Select_Scene
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'off'
+      sequence:
+      - service: yeelight.set_mode
+        data:
+          entity_id: light.flurlicht
+          mode: normal
+      - service: light.turn_on
+        data: {}
+        entity_id: light.flurlicht
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'on'
+      sequence:
+      - service: yeelight.set_mode
+        data:
+          entity_id: light.flurlicht
+          mode: moonlight
+    default: []
+  mode: single

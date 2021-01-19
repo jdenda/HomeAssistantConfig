@@ -1,0 +1,11 @@
+lights_arbeitszimmer:
+  name: Lichter
+  entities:
+    - light.extended_color_light_1
+    - light.extended_color_light_2
+    - light.extended_color_light_3
+    - light.extended_color_light_4
+    - light.hue_lightstrip_plus_1
+    - light.hue_play_1
+    - light.hue_play_2
+    - light.wled

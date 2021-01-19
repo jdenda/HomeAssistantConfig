@@ -1,0 +1,4 @@
+# Creates all legacy groups.  All newly created entity_id's will be added to the correct legacy group.
+groups:
+  module: group_all
+  class: GroupAll

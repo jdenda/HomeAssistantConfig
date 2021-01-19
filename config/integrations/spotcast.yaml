@@ -1,0 +1,3 @@
+spotcast:
+  sp_dc: !secret primary_sp_dc
+  sp_key: !secret primary_sp_key

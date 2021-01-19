@@ -1,0 +1,28 @@
+# The recorder component is storing details in a database which
+# then are handled by the history component.
+#
+# https://www.home-assistant.io/components/recorder/
+#
+recorder:
+  # The number of days of history to keep in the recorder database
+  purge_keep_days: 14
+  # Use MariaDB to record events instead of SQLite
+  db_url: !secret db_url
+  # How often (in days) the purge task runs
+  # purge_interval: 1
+  # Excude domains and entities from recorder for performance
+  exclude:
+    domains:
+      - automation
+      - updater
+      - camera
+      - group
+    entities:
+      - sun.sun # Don't record sun data
+      - sensor.last_boot # Comes from 'systemmonitor' sensor platform
+      - sensor.date
+      - sensor.xiaomi_map
+      - sensor.sidebar_greeting
+    event_types:
+      - call_service
+      - themes_updated

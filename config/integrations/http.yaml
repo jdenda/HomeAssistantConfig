@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/integrations/http/
+http:
+  server_port: 8123
+  ip_ban_enabled: true
+  login_attempts_threshold: 5

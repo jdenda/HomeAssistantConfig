@@ -1,0 +1,7 @@
+  windows:
+    name: Fenster
+    entities:
+      - binary_sensor.window_bad_contact
+      - binary_sensor.window_kueche_contact
+      - binary_sensor.window_schlafzimmer_contact
+      - binary_sensor.window_wohnzimmer_contact

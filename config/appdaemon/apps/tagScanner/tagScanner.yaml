@@ -1,0 +1,27 @@
+TagKleineTasse:
+  module: tagScanner
+  class: TagScanner
+  tag: 11286137-e3dc-4a98-8574-156ad70e41fc
+  entity: switch.kleine_tasse
+  action: "on"
+
+TagGrosseTasse:
+  module: tagScanner
+  class: TagScanner
+  tag: 49e321bd-3013-4e66-af99-df39fc09496f
+  entity: switch.grosse_tasse
+  action: "on"
+
+TagCheckKaffee:
+  module: tagScanner
+  class: TagScanner
+  tag: 1035562f-a3d7-40a5-8666-d7165f25ba73
+  entity: input_boolean.kaffee_vorbereitet
+  action: "on"
+
+TagChargerOffice:
+  module: tagScanner
+  class: TagScanner
+  tag: 847eb086-39a6-44c1-953b-ea647c7f9d33
+  entity: switch.pc_janneck
+  action: "on"

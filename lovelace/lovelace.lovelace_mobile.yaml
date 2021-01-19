@@ -1,0 +1,1085 @@
+config:
+  title: Mobile
+  views:
+  - badges: []
+    cards:
+    - content: "# Men\xFC\n"
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - icon: mdi:home
+        name: Home
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/rooms
+        type: custom:button-card
+      - icon: mdi:lightbulb
+        name: Lichter
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/lights
+        type: custom:button-card
+      - icon: mdi:alarm-light
+        name: Alarm
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/alarm
+        type: custom:button-card
+      - icon: mdi:settings
+        name: Settings
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/settings
+        type: custom:button-card
+      type: horizontal-stack
+    - entity: weather.zuhause
+      name: zu Hause
+      type: custom:simple-weather-card
+    - cards:
+      - entity: device_tracker.life360_janneck
+        name: Janneck
+        show_entity_picture: true
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          icon: null
+        type: custom:button-card
+      - entity: device_tracker.life360_luca
+        name: Luca
+        show_entity_picture: true
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          icon: null
+        type: custom:button-card
+      - entity: device_tracker.life360_guido
+        name: Guido
+        show_entity_picture: true
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          icon: null
+        type: custom:button-card
+      - entity: device_tracker.life360_lenja_denda
+        name: Lenja
+        show_entity_picture: true
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          icon: null
+        type: custom:button-card
+      type: horizontal-stack
+    - entity: sensor.emby_latest_movies
+      title: Latest Movies
+      type: custom:upcoming-media-card
+    icon: mdi:home
+    path: home
+    theme: Dark Soft UI
+    title: home
+  - badges: []
+    cards:
+    - content: "# Men\xFC\n"
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - entity: switch.wled
+        icon: mdi:arrow-left
+        name: "Zur\xFCck"
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/home
+        type: custom:button-card
+      - icon: mdi:lightbulb
+        name: Lichter
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/lights
+        type: custom:button-card
+      - icon: mdi:alarm-light
+        name: Alarm
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/alarm
+        type: custom:button-card
+      - icon: mdi:settings
+        name: Settings
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/settings
+        type: custom:button-card
+      type: horizontal-stack
+    - content: "# R\xE4ume\n"
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - icon: mdi:sofa
+        name: Wohnzimmer
+        show_state: true
+        styles:
+          card:
+          - width: 105px
+          - height: 105px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/wohnzimmer
+        type: custom:button-card
+      - icon: mdi:chef-hat
+        name: "K\xFCche"
+        show_state: true
+        styles:
+          card:
+          - width: 105px
+          - height: 105px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/kitchen
+        type: custom:button-card
+      - icon: mdi:paper-roll
+        name: Bad
+        show_state: true
+        styles:
+          card:
+          - width: 105px
+          - height: 105px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/alarm
+        type: custom:button-card
+      type: horizontal-stack
+    - cards:
+      - icon: mdi:shoe-print
+        name: Flur
+        show_state: true
+        styles:
+          card:
+          - width: 105px
+          - height: 105px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/home
+        type: custom:button-card
+      - icon: mdi:desktop-classic
+        name: Office
+        show_state: true
+        styles:
+          card:
+          - width: 105px
+          - height: 105px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/lights
+        type: custom:button-card
+      - icon: mdi:bed-empty
+        name: Schlafzimmer
+        show_state: true
+        styles:
+          card:
+          - width: 105px
+          - height: 105px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/bedroom
+        type: custom:button-card
+      type: horizontal-stack
+    icon: mdi:home
+    path: rooms
+    theme: Dark Soft UI
+    title: rooms
+  - badges: []
+    cards: []
+    icon: mdi:lightbulb
+    path: lights
+    theme: Dark Soft UI
+    title: lights
+  - badges: []
+    cards: []
+    icon: mdi:alarm
+    path: alarm
+    theme: Dark Soft UI
+    title: alarm
+  - badges: []
+    cards: []
+    icon: mdi:settings
+    path: settings
+    theme: Dark Soft UI
+    title: settings
+  - badges: []
+    cards:
+    - content: "# Men\xFC\n"
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - icon: mdi:arrow-left
+        name: "Zur\xFCck"
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/home
+        type: custom:button-card
+      - icon: mdi:lightbulb
+        name: Lichter
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/lights
+        type: custom:button-card
+      - icon: mdi:alarm-light
+        name: Alarm
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/alarm
+        type: custom:button-card
+      - icon: mdi:settings
+        name: Settings
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/settings
+        type: custom:button-card
+      type: horizontal-stack
+    - content: "# Ger\xE4te\n"
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - entity: vacuum.rockrobo
+        icon: mdi:robot-vacuum
+        name: Vacuum
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        type: custom:button-card
+      - entity: media_player.chromecastaudio1735
+        icon: mdi:cast-audio
+        name: Audio
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        type: custom:button-card
+      type: horizontal-stack
+    - content: '# Lichter
+
+        '
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - entity: light.li_esstisch1
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.li_esstisch1
+            type: custom:light-entity-card
+        icon: mdi:ceiling-light
+        name: Esstisch 1
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.li_esstisch2
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.li_esstisch2
+            type: custom:light-entity-card
+        icon: mdi:ceiling-light
+        name: Esstisch 2
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.spot_couch
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.spot_couch
+            type: custom:light-entity-card
+        icon: mdi:spotlight
+        name: Couch
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.spot_teekueche
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.spot_teekueche
+            type: custom:light-entity-card
+        icon: mdi:spotlight
+        name: "Teek\xFCche"
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      type: horizontal-stack
+    - cards:
+      - entity: light.bar
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.bar
+            type: custom:light-entity-card
+        icon: mdi:vanity-light
+        name: Bar
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.bar_ambilight
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.bar_ambilight
+            type: custom:light-entity-card
+        icon: mdi:vanity-light
+        name: Bar Ambi
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: switch.arbeitsplatte
+        icon: mdi:led-strip
+        name: Spots
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.bar_back
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.bar_back
+            type: custom:light-entity-card
+        icon: mdi:led-strip-variant
+        name: Bar Back
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      type: horizontal-stack
+    icon: mdi:food
+    path: kitchen
+    theme: Dark Soft UI
+    title: wohnzimmer
+  - badges: []
+    cards:
+    - content: "# Men\xFC\n"
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - entity: switch.wled
+        icon: mdi:arrow-left
+        name: "Zur\xFCck"
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/home
+        type: custom:button-card
+      - icon: mdi:lightbulb
+        name: Lichter
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/lights
+        type: custom:button-card
+      - icon: mdi:alarm-light
+        name: Alarm
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/alarm
+        type: custom:button-card
+      - icon: mdi:settings
+        name: Settings
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/settings
+        type: custom:button-card
+      type: horizontal-stack
+    - content: '# Lichter
+
+        '
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - entity: light.nachttischlampe
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.nachttischlampe
+            type: custom:light-entity-card
+        icon: mdi:lamp
+        name: Nachttisch
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.kommodenlampe
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.kommodenlampe
+            type: custom:light-entity-card
+        icon: mdi:floor-lamp-variant
+        name: Kommode
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.spot_couch
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.spot_couch
+            type: custom:light-entity-card
+        icon: mdi:spotlight
+        name: Couch
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.spot_teekueche
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.spot_teekueche
+            type: custom:light-entity-card
+        icon: mdi:spotlight
+        name: "Teek\xFCche"
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      type: horizontal-stack
+    - content: '# Wecker
+
+        '
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - entities:
+      - entity: input_boolean.alarmweekday
+        icon: mdi:briefcase
+        name: Wochentags
+      - entity: input_boolean.wakemeup
+        name: Status
+      - entity: input_number.alarm_1_hour
+        icon: mdi:timer
+        name: Stunden
+      - entity: input_number.alarm_1_minutes
+        icon: mdi:timer
+        name: Minuten
+      - entity: input_number.alarm_natural_wakeup_fade_in
+        icon: mdi:weather-sunset
+        name: Fade-In
+      - entity: input_boolean.radiowakeup
+        icon: mdi:music
+        name: Radio Mode
+      - entity: sensor.alarm_time
+        icon: mdi:clock
+        name: Uhrzeit
+      show_header_toggle: false
+      type: entities
+    icon: mdi:bed
+    path: bedroom
+    theme: Dark Soft UI
+    title: bedroom
+  - badges: []
+    cards:
+    - content: "# Men\xFC\n"
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - icon: mdi:arrow-left
+        name: "Zur\xFCck"
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/home
+        type: custom:button-card
+      - icon: mdi:lightbulb
+        name: Lichter
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/lights
+        type: custom:button-card
+      - icon: mdi:alarm-light
+        name: Alarm
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/alarm
+        type: custom:button-card
+      - icon: mdi:settings
+        name: Settings
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/settings
+        type: custom:button-card
+      type: horizontal-stack
+    - content: "# Ger\xE4te\n"
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - entity: vacuum.rockrobo
+        icon: mdi:robot-vacuum
+        name: Vacuum
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        type: custom:button-card
+      - entity: switch.beamer_power
+        icon: mdi:projector
+        name: Beamer
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        type: custom:button-card
+      - entity: media_player.shield_tv
+        icon: mdi:youtube-tv
+        name: Shield
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        type: custom:button-card
+      - entity: media_player.chromecastaudio1735
+        icon: mdi:cast-audio
+        name: Audio
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        type: custom:button-card
+      type: horizontal-stack
+    - cards:
+      - entity: media_player.onkyo_receiver
+        icon: mdi:amplifier
+        name: Amplify
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        type: custom:button-card
+      - entity: switch.receiver_2_power
+        icon: mdi:amplifier
+        name: Sub Amp
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace-mobile/lights
+        type: custom:button-card
+      type: horizontal-stack
+    - content: '# Lichter
+
+        '
+      style:
+        .: "ha-card {\n  --ha-card-background: none !important;\n  box-shadow: none\
+          \ !important;\n}\n"
+        ha-markdown:
+          $: "h1 {\n  font-size: 20px;\n  font-weight: bold;\n  font-family: Helvetica;\n\
+            \  letter-spacing: '-0.01em';\n}\n"
+      type: markdown
+    - cards:
+      - entity: light.li_esstisch1
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.li_esstisch1
+            type: custom:light-entity-card
+        icon: mdi:ceiling-light
+        name: Esstisch 1
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.li_esstisch2
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.li_esstisch2
+            type: custom:light-entity-card
+        icon: mdi:ceiling-light
+        name: Esstisch 2
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.spot_couch
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.spot_couch
+            type: custom:light-entity-card
+        icon: mdi:spotlight
+        name: Couch
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.spot_teekueche
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.spot_teekueche
+            type: custom:light-entity-card
+        icon: mdi:spotlight
+        name: "Teek\xFCche"
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      type: horizontal-stack
+    - cards:
+      - entity: light.bar
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.bar
+            type: custom:light-entity-card
+        icon: mdi:vanity-light
+        name: Bar
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.bar_ambilight
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.bar_ambilight
+            type: custom:light-entity-card
+        icon: mdi:vanity-light
+        name: Bar Ambi
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: switch.arbeitsplatte
+        icon: mdi:led-strip
+        name: Spots
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      - entity: light.bar_back
+        hold_action:
+          action: more-info
+          service: browser_mod.popup
+          service_data:
+            entity: light.bar_back
+            type: custom:light-entity-card
+        icon: mdi:led-strip-variant
+        name: Bar Back
+        show_state: true
+        styles:
+          card:
+          - width: 76px
+          - height: 76px
+          name:
+          - font-size: 14px
+          state:
+          - font-size: 12px
+        tap_action:
+          action: toggle
+        type: custom:button-card
+      type: horizontal-stack
+    icon: mdi:sofa
+    path: wohnzimmer
+    title: wohnzimmer
+  - badges: []
+    cards:
+    - entities:
+      - entity: sensor.glances_composite_temp
+      - entity: sensor.glances_containers_active
+      - entity: sensor.glances_containers_cpu_used
+      - entity: sensor.glances_containers_ram_used
+      - entity: sensor.glances_mnt_cache_free
+      - entity: sensor.glances_mnt_vms_free
+      - entity: sensor.glances_total
+      - entity: sensor.glances_thread
+      type: entities
+    - card:
+        type: entities
+      filter:
+        include:
+        - domain: automation
+          options:
+            tap_action:
+              action: call-service
+              service: automation.toggle
+              service_data:
+                entity_id: this.entity_id
+      type: custom:auto-entities
+    path: test
+    theme: dwains-theme-dark
+    title: test

@@ -1,0 +1,3 @@
+sonoff:
+  username: !secret sf_user
+  password: !secret  sf_pass

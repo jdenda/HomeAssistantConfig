@@ -1,0 +1,8 @@
+# followMe:
+#   module: followme
+#   class: followMe
+#   lead: "light.wled"
+#   follow: 
+#     - "light.extended_color_light_1"
+#     - "light.extended_color_light_2"
+#   attributes: False

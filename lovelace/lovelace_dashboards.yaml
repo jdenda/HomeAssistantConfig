@@ -1,0 +1,14 @@
+items:
+- icon: mdi:cellphone
+  id: lovelace_mobile
+  mode: storage
+  require_admin: false
+  show_in_sidebar: false
+  title: mobile
+  url_path: lovelace-mobile
+- id: lovelace_ui
+  mode: storage
+  require_admin: false
+  show_in_sidebar: true
+  title: UI
+  url_path: lovelace-ui

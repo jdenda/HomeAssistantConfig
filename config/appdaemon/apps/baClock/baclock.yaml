@@ -1,0 +1,21 @@
+# # Alarm Clock App
+# baClock:
+#   module: baclock
+#   class: baClock
+#   alarm_time: sensor.alarm_time_pixel
+#   bool_wakemeup: input_boolean.wakemeup
+#   num_naturalwakeup: input_number.alarm_natural_wakeup_fade_in
+#   bool_alarmweekday: input_boolean.alarmweekday
+#   bin_isweekday: binary_sensor.workday_today
+#   bool_radiowakeup: input_boolean.radiowakeup
+#   light_wakeup: light.bedroom_lights
+#   fade_in_time_multiplicator: 60
+#   switch_adaptive_light: switch.adaptive_lighting_schlafzimmer
+#   motion_trigger: input_boolean.appswitch_motion_schlafzimmer
+#   entity_kill_clock: binary_sensor.fl_motion_occupancy
+#   num_volume: input_number.volume
+#   boool_nightmode: input_boolean.nightmode
+#   script_post: script.checkkaffee
+#   global_dependencies:
+#     - globals
+

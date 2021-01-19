@@ -1,0 +1,1237 @@
+- id: '1596456620873'
+  alias: AZ_Motion_Sensor
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.az_motion_occupancy
+    platform: state
+  - platform: state
+    entity_id: sensor.az_motion_illuminance
+  - platform: state
+    entity_id: binary_sensor.baynesian_arbeitszimmer
+  condition:
+  - condition: state
+    entity_id: input_boolean.gaming
+    state: 'off'
+  action:
+  - choose:
+    - conditions:
+      - below: '100'
+        condition: numeric_state
+        entity_id: sensor.az_motion_illuminance
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.baynesian_arbeitszimmer
+        state: 'on'
+      sequence:
+      - entity_id: scene.az_li_work
+        service: scene.turn_on
+    - conditions:
+      - below: '120'
+        condition: numeric_state
+        entity_id: sensor.az_motion_illuminance
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.baynesian_arbeitszimmer
+        state: 'on'
+      sequence:
+      - entity_id: scene.az_night
+        service: scene.turn_on
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.az_motion_occupancy
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.office
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.baynesian_arbeitszimmer
+        state: 'off'
+      sequence:
+      - entity_id: scene.az_li_off
+        service: scene.turn_on
+    default: []
+  mode: restart
+- id: '1596472979446'
+  alias: AZ_BT2_SNGL
+  description: ''
+  trigger:
+  - device_id: c3af060f9caf4016847443c00c56ad52
+    discovery_id: 0x00158d0001243f43 click_single
+    domain: mqtt
+    platform: device
+    subtype: single
+    type: click
+  condition: []
+  action:
+  - data: {}
+    entity_id: scene.az_li_work
+    service: scene.turn_on
+  - data: {}
+    entity_id: automation.az_mo_lights
+    service: automation.turn_off
+  mode: single
+- id: '1592222764019'
+  alias: WZ_MO
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.wz_motion_occupancy
+    platform: state
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wz_motion_occupancy
+        state: 'on'
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.shield_tv
+          state: playing
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'off'
+      - below: '150'
+        condition: numeric_state
+        entity_id: sensor.wz_motion_illuminance
+      sequence:
+      - scene: scene.wz_li_day
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wz_motion_occupancy
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'on'
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.shield_tv
+          state: playing
+      - below: '150'
+        condition: numeric_state
+        entity_id: sensor.wz_motion_illuminance
+      sequence:
+      - scene: scene.wz_li_night
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wz_motion_occupancy
+        state: 'off'
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.shield_tv
+          state: playing
+      sequence:
+      - scene: scene.wz_li_all_off
+    default: []
+  mode: restart
+- id: '1596531244478'
+  alias: AZ_BTN_DBL
+  description: ''
+  trigger:
+  - device_id: c3af060f9caf4016847443c00c56ad52
+    discovery_id: 0x00158d0001243f43 click_double
+    domain: mqtt
+    platform: device
+    subtype: double
+    type: click
+  condition: []
+  action:
+  - data: {}
+    entity_id: scene.az_li_off
+    service: scene.turn_on
+  - data: {}
+    entity_id: automation.az_mo_lights
+    service: automation.turn_on
+  mode: single
+- id: '1596531370556'
+  alias: AZ_BTN_TRPPL
+  description: ''
+  trigger:
+  - device_id: c3af060f9caf4016847443c00c56ad52
+    discovery_id: 0x00158d0001243f43 click_triple
+    domain: mqtt
+    platform: device
+    subtype: triple
+    type: click
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.pc_janneck
+    service: switch.toggle
+  mode: single
+- id: '1596532478904'
+  alias: CF_BOL_NIGHTMODE
+  description: ''
+  trigger:
+  - entity_id: input_boolean.nightmode
+    platform: state
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'on'
+      sequence:
+      - entity_id: switch.adaptive_lighting_sleep_mode_schlafzimmer
+        service: switch.turn_on
+      - entity_id: switch.adaptive_lighting_sleep_mode_wohnzimmer
+        service: switch.turn_on
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.nightmode
+        state: 'off'
+      sequence:
+      - entity_id: switch.adaptive_lighting_sleep_mode_schlafzimmer
+        service: switch.turn_off
+      - entity_id: switch.adaptive_lighting_sleep_mode_wohnzimmer
+        service: switch.turn_off
+  mode: single
+- id: '1596534786087'
+  alias: CF_TIME_NIGHTMODE
+  description: ''
+  trigger:
+  - at: '21:00'
+    platform: time
+  - at: '23:55'
+    platform: time
+  - at: '5:30'
+    platform: time
+  - at: '8:30'
+    platform: time
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - after: '20:55:00'
+        before: '21:05:00'
+        condition: time
+      - condition: state
+        entity_id: binary_sensor.workday_tomorrow
+        state: 'on'
+      sequence:
+      - entity_id: input_boolean.nightmode
+        service: input_boolean.turn_on
+    - conditions:
+      - after: '21:05:00'
+        before: '23:59:00'
+        condition: time
+      sequence:
+      - entity_id: input_boolean.nightmode
+        service: input_boolean.turn_on
+    - conditions:
+      - after: 05:25:00
+        before: 05:35:00
+        condition: time
+      - condition: state
+        entity_id: binary_sensor.workday_today
+        state: 'on'
+      sequence:
+      - entity_id: input_boolean.nightmode
+        service: input_boolean.turn_off
+    - conditions:
+      - after: 05:35:00
+        before: '15:00:00'
+        condition: time
+      sequence:
+      - entity_id: input_boolean.nightmode
+        service: input_boolean.turn_off
+  mode: single
+- id: '1596559002794'
+  alias: WZ_SHIELD
+  description: ''
+  trigger:
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: 'off'
+    to: idle
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: 'off'
+    to: playing
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: 'off'
+    to: paused
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: playing
+    to: paused
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: playing
+    to: idle
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: playing
+    to: 'off'
+  - entity_id: media_player.shield_tv
+    platform: state
+    to: 'off'
+    from: paused
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: paused
+    to: idle
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: paused
+    to: playing
+  - entity_id: media_player.shield_tv
+    platform: state
+    to: playing
+    from: idle
+  - entity_id: media_player.shield_tv
+    platform: state
+    to: paused
+    from: idle
+  - entity_id: media_player.shield_tv
+    platform: state
+    from: idle
+    to: 'off'
+  condition:
+  - condition: state
+    entity_id: input_boolean.besuch
+    state: 'off'
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: media_player.shield_tv
+      state: 'off'
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: media_player.shield_tv
+      state: unavailable
+  - condition: state
+    entity_id: media_player.wohnung
+    state: 'off'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: media_player.shield_tv
+        state: playing
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.beamer_power
+      - data:
+          scene_id: before
+          snapshot_entities:
+          - light.bar
+          - light.bar_ambilight
+          - light.spot_couch
+          - light.spot_teekueche
+          - light.bar_back
+          - light.hue_play01
+          - light.hue_play02
+          - light.li_esstisch1
+          - light.li_esstisch_2_light
+          - switch.k_lampe
+          - switch.arbeitsplatte
+          - light.nanoleaf
+        service: scene.create
+      - service_template: "{% if is_state('input_boolean.overwrite_esstisch', 'off')\
+          \ %}\n  script.wz_movie_esstisch\n{%else%}\n  script.placeholder\n{%endif%}\n"
+      - service_template: "{% if is_state('input_boolean.overwrite_kuche', 'off')\
+          \ %}\n  script.wz_movie_kuche\n{%else%}\n  script.placeholder\n{%endif%}\n"
+      - service_template: "{% if is_state('input_boolean.overwrite_wohnzimmer', 'off')\
+          \ %}\n  script.wz_movie_wohnzimmer\n{%else%}\n  script.placeholder\n{%endif%}\n"
+    - conditions:
+      - condition: state
+        entity_id: media_player.shield_tv
+        state: paused
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.beamer_power
+      - entity_id: scene.before
+        service: scene.turn_on
+    - conditions:
+      - condition: state
+        entity_id: media_player.shield_tv
+        state: idle
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.beamer_power
+      - entity_id: scene.before
+        service: scene.turn_on
+    - conditions:
+      - condition: state
+        entity_id: media_player.shield_tv
+        state: 'off'
+      sequence:
+      - entity_id: scene.before
+        service: scene.turn_on
+      - service: script.wz_tv_all_off
+  mode: single
+- id: '1596711904196'
+  alias: CF_VAC_CLEANED
+  description: ''
+  trigger:
+  - entity_id: vacuum.rockrobo
+    platform: state
+    to: docked
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.vaccumed
+        state: 'on'
+      - after: '21:00'
+        before: 04:00
+        condition: time
+      sequence:
+      - data: {}
+        entity_id: input_boolean.vaccumed
+        service: input_boolean.turn_off
+    - conditions:
+      - after: 04:00
+        before: '21:00'
+        condition: time
+      sequence:
+      - data: {}
+        entity_id: input_boolean.vaccumed
+        service: input_boolean.turn_on
+    default: []
+  mode: single
+- id: '1596712132325'
+  alias: CF_VAC_START
+  description: ''
+  trigger:
+  - hours: '14'
+    minutes: /5
+    platform: time_pattern
+  - hours: '15'
+    minutes: /5
+    platform: time_pattern
+  condition:
+  - condition: state
+    entity_id: input_boolean.vaccumed
+    state: 'off'
+  action:
+  - data:
+      data:
+        actions:
+        - action: stopvacuum
+          title: Stoppe Reinigung
+      message: Roborock startet die Reinigung!
+    service: notify.mobile_app_pixel_4_xl
+  - data: {}
+    entity_id: vacuum.rockrobo
+    service: vacuum.start
+  - data:
+      fan_speed: high
+    entity_id: vacuum.rockrobo
+    service: vacuum.set_fan_speed
+  - delay: 00:05:00
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.vaccumed
+  mode: single
+- id: '1596713408877'
+  alias: EVT_VAC_STOP
+  description: ''
+  trigger:
+  - event_data:
+      action: stopvacuum
+    event_type: mobile_app_notification_action
+    platform: event
+  condition: []
+  action:
+  - service: vacuum.return_to_base
+    data: {}
+    entity_id: vacuum.rockrobo
+  - data:
+      message: Reinigung gestoppt!
+    service: notify.mobile_app_pixel_4_xl
+  mode: single
+- id: '1597126582278'
+  alias: CF_ERR_NOTIFY
+  description: ''
+  trigger:
+  - event_data:
+      level: ERROR
+    event_type: system_log_event
+    platform: event
+  condition: []
+  action:
+  - data_template:
+      message: '{{ trigger.event.data.message }}'
+    service: notify.janneck_telegram
+  mode: single
+- id: '1597684847288'
+  alias: AZ_TV
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.r5_janneck_power_status
+    platform: state
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.r5_janneck_power_status
+        state: 'on'
+      sequence:
+      - data: {}
+        entity_id: switch.tv_s20_relay
+        service: switch.turn_on
+      - data: {}
+        entity_id: switch.dash_monitor_relay
+        service: switch.turn_on
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.r5_janneck_power_status
+        state: 'off'
+      sequence:
+      - data: {}
+        entity_id: switch.tv_s20_relay
+        service: switch.turn_off
+      - data: {}
+        entity_id: switch.dash_monitor_relay
+        service: switch.turn_off
+    default:
+    - data: {}
+      entity_id: switch.tv_s20_relay
+      service: switch.turn_off
+    - data: {}
+      entity_id: switch.dash_monitor_relay
+      service: switch.turn_off
+  mode: single
+- id: '1598352938744'
+  alias: EVT_Kaffee
+  description: ''
+  trigger:
+  - event_data:
+      device_id: eb0532cc70115a2a
+      tag_id: f27e0b2d-9376-4ece-83ac-4c19965dc8d9
+    event_type: tag_scanned
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.kleine_tasse
+    service: switch.turn_on
+  mode: single
+- id: '1598371562182'
+  alias: CF_OFF
+  description: ''
+  trigger:
+  - entity_id: input_boolean.is_home
+    for: 00:00:10
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data: {}
+    entity_id: group.all_lights
+    service: homeassistant.turn_off
+  - data: {}
+    entity_id: group.all_fans
+    service: homeassistant.turn_off
+  - data: {}
+    entity_id: switch.arbeitsplatte
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.bad_lichtschalter
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.k_lampe
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.beamer_power
+    service: switch.turn_off
+  - delay: 00:00:10
+  - data: {}
+    entity_id: automation.cf_on
+    service: automation.turn_on
+  mode: single
+- id: '1598371651484'
+  alias: CF_ON
+  description: ''
+  trigger:
+  - entity_id: input_boolean.is_home
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: group.all_automations
+    service: homeassistant.turn_on
+  mode: single
+- id: '1598884626658'
+  alias: EVT_Kaffee_groß
+  description: ''
+  trigger:
+  - event_data:
+      device_id: eb0532cc70115a2a
+      tag_id: 254f2d38-c8c5-441f-8838-1e576de37841
+    event_type: tag_scanned
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.grosse_tasse
+    service: switch.turn_on
+  mode: single
+- id: '1600758341573'
+  alias: CF_Holiday
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.urlaub
+  condition: []
+  action:
+  - service: script.cf_automations_off
+    data: {}
+  mode: queued
+  max: 10
+- id: '1601372310556'
+  alias: CF_Besuch_aus
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:00
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.besuch
+  mode: single
+- id: '1601531129205'
+  alias: CF_Noboy_Home_Motion
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.shield_cam_person
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.besuch
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.is_home
+    state: 'off'
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: person.janneck
+      state: Home
+  action:
+  - service: notify.mobile_app_pixel_4_xl
+    data:
+      message: Jemand ist im Wohnzimmer!
+      data:
+        image: /api/camera_proxy/camera.sield_cam_last_person
+        actions:
+        - action: URI
+          title: Open Cameras
+          uri: /dwains-theme/dynamic_page
+  mode: single
+- id: '1601649477737'
+  alias: Tag Charging Bedroom is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 8aa094b1-ba65-433a-8eb6-23d6c05bd960
+  condition:
+  - condition: time
+    after: '19:00'
+    before: 04:00
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.nightmode
+  mode: single
+- id: '1602052894893'
+  alias: Notify_Kaffeemaschine:Vorbereitet
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kaffee_vorbereitet
+    from: 'off'
+    to: 'on'
+    for: 00:00:02
+  condition: []
+  action:
+  - service: notify.mobile_app_pixel_4_xl
+    data:
+      title: Kaffeemaschine
+      message: Wurde für den nächsten Tag vorbereitet!
+  mode: single
+- id: '1603313949122'
+  alias: CF_VAC_RESET
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.vaccumed
+  mode: single
+- id: '1604429579421'
+  alias: Start Music when home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.user_home_janneck
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.user_home_luca
+    state: 'off'
+  action:
+  - service: input_select.select_option
+    data:
+      option: Wohnung
+    entity_id: input_select.playback_devices
+  - service: input_select.select_option
+    data:
+      option: Chillige Mukke
+    entity_id: input_select.playlists
+  - service: script.cf_start_playback
+    data: {}
+  - delay: 00:00:15
+  - service: input_number.set_value
+    data:
+      value: 40
+    entity_id: input_number.volume
+  mode: single
+- id: '1608382653998'
+  alias: Home Assistant Restart Notification
+  description: ''
+  use_blueprint:
+    path: gregoryduckworth/restart_notification.yaml
+    input:
+      notify_device: 8a2a4dcde81840e5b83b0999867014ee
+- id: '1608681616540'
+  alias: PC_ChangeAudioInput
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.rollstuhl_contact
+    for: 00:00:03
+  condition:
+  - condition: state
+    entity_id: binary_sensor.pc_janneck
+    state: 'on'
+  - condition: numeric_state
+    entity_id: sensor.r5_janneck_system_idle_time
+    below: '120'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.rollstuhl_contact
+        state: 'off'
+      sequence:
+      - service: mqtt.publish
+        data:
+          topic: iotlink/workgroup/r5-janneck/commands/run
+          payload: '{ "command": "c:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": "-WindowStyle Hidden -ExecutionPolicy Bypass -Command C:\\scripts\\setAudioIn_Interface.ps1"
+            ,"user": "", "visible": true, "fallback": true }'
+      - delay: 00:00:02
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.rollstuhl_contact
+        state: 'on'
+      sequence:
+      - service: mqtt.publish
+        data:
+          topic: iotlink/workgroup/r5-janneck/commands/run
+          payload: '{ "command": "c:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": "-WindowStyle Hidden -ExecutionPolicy Bypass -Command C:\\scripts\\setAudioIn_Headset.ps1"
+            ,"user": "", "visible": true, "fallback": true }'
+      - delay: 00:00:02
+    default: []
+  mode: single
+- id: '1608762126699'
+  alias: CF_Bed
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.bed
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.bed
+        state: 'off'
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_arbeitszimmer
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_bad
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_flur
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_schlafzimmer
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_wohnzimmer
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.bed
+        state: 'on'
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_arbeitszimmer
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_bad
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_flur
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_schlafzimmer
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_wohnzimmer
+    default: []
+  mode: single
+- id: '1609073932291'
+  alias: BAD_Vacuum
+  description: ''
+  trigger:
+  - platform: time
+    at: '10:00:00'
+  - platform: time
+    at: '16:00:00'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.duschen
+    state: 'off'
+  action:
+  - service: mqtt.publish
+    data:
+      topic: valetudo/rockrobo/custom_command
+      payload: "{ \"command\": \"zoned_cleanup\", \"zone_ids\": [\n   \"Foo\",\n \
+        \  {\n        \"id\": \"Bad\",\n        \"repeats\": 2\n   }\n], \"afterCleaning\"\
+        : \"Base\" }"
+  mode: single
+- id: '1610047120060'
+  alias: WZ_BTN_COUCH_Double
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c3af060f9caf4016847443c00c56ad52
+    type: click
+    subtype: double
+    discovery_id: 0x00158d0001243f43 click_double
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: media_player.shield_tv
+      state: 'off'
+  action:
+  - service: media_player.media_play_pause
+    data: {}
+    entity_id: media_player.shield_tv
+  - service: script.wz_notify_action
+    data: {}
+  mode: single
+- id: '1610133916527'
+  alias: CF_RESET_VARIABLES
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:04:00
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.gaming
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.overwrite_wohnzimmer
+  mode: single
+- id: '1610134158058'
+  alias: AZ_GAME_MODE_TRIGGER
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gaming
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.gaming
+        state: 'on'
+      sequence:
+      - service: automation.turn_off
+        data: {}
+        entity_id: automation.pc_changeaudioinput
+      - scene: scene.az_gaming
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.gaming
+        state: 'off'
+      sequence:
+      - service: automation.turn_on
+        data: {}
+        entity_id: automation.pc_changeaudioinput
+      - service: automation.trigger
+        data: {}
+        entity_id: automation.az_mo_lights
+    default: []
+  mode: single
+- id: '1610135464662'
+  alias: AZ_PC_STATE
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.pc_janneck
+  - platform: state
+    entity_id: binary_sensor.r5_janneck_power_status
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.pc_janneck
+        state: 'off'
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.gaming
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.r5_janneck_power_status
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.pc_janneck
+        state: 'off'
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.gaming
+    default: []
+  mode: single
+- id: '1610142557556'
+  alias: WZ_BTN_COUCH_SINGLE
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c3af060f9caf4016847443c00c56ad52
+    type: click
+    subtype: single
+    discovery_id: 0x00158d0001243f43 click_single
+  condition: []
+  action:
+  - service: input_boolean.toggle
+    data: {}
+    entity_id: input_boolean.overwrite_wohnzimmer
+  - service: script.wz_notify_action
+    data: {}
+  mode: single
+- id: '1610142736385'
+  alias: WZ_OVERWRITE_WOHNZIMMER
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.overwrite_wohnzimmer
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.overwrite_wohnzimmer
+        state: 'on'
+      sequence:
+      - service: tts.google_translate_say
+        data:
+          entity_id: media_player.lenovosmartdisplay80269
+          message: Überschreibe Wohnzimmerlampen mit Standardwerten
+          language: de
+      - scene: scene.wz_day_wohnzimmer
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.overwrite_wohnzimmer
+        state: 'off'
+      sequence:
+      - service: tts.google_translate_say
+        data:
+          entity_id: media_player.lenovosmartdisplay80269
+          message: Nehme Standardwerte von Wohnzimmerlampen zurück.
+          language: de
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.shield_tv
+          state: 'off'
+      - service: automation.trigger
+        data: {}
+        entity_id: automation.wz_shield
+    default: []
+  mode: single
+- id: '1610150895214'
+  alias: WZ_BTN_BAR_SINGLE
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 36de2f86f374e14fdd84eca9bc86ff47
+    type: click
+    subtype: single
+    discovery_id: 0x00158d0001f3b8ec click_single
+  condition: []
+  action:
+  - service: input_boolean.toggle
+    data: {}
+    entity_id: input_boolean.overwrite_esstisch
+  mode: single
+- id: '1610151030297'
+  alias: WZ_OVERWRITE_ESSTISCH
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.overwrite_esstisch
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.overwrite_esstisch
+        state: 'on'
+      sequence:
+      - service: scene.create
+        data:
+          scene_id: esstisch_before
+          snapshot_entities:
+          - light.li_esstisch1
+          - light.li_esstisch_2_light
+      - scene: scene.wz_esstisch_overwrite
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.overwrite_esstisch
+        state: 'off'
+      sequence:
+      - scene: scene.esstisch_before
+      - service: automation.trigger
+        data: {}
+        entity_id: automation.wz_shield
+    default: []
+  - service: script.wz_notify_action
+    data: {}
+  mode: single
+- id: '1610152964269'
+  alias: WZ_BTN_Bar_Double
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 36de2f86f374e14fdd84eca9bc86ff47
+    type: click
+    subtype: double
+    discovery_id: 0x00158d0001f3b8ec click_double
+  condition: []
+  action:
+  - service: input_boolean.toggle
+    data: {}
+    entity_id: input_boolean.overwrite_kuche
+  mode: single
+- id: '1610153073376'
+  alias: WZ_OVERWRITE_Küche
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.overwrite_kuche
+  condition: []
+  action:
+  - choose:
+    - conditions: []
+      sequence: []
+    default: []
+  mode: single
+- id: '1610205902135'
+  alias: AZ_Baynesian
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.baynesian_arbeitszimmer
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.baynesian_arbeitszimmer
+        state: 'off'
+      sequence:
+      - scene: scene.az_li_off
+    default: []
+  mode: single
+- id: '1610285302841'
+  alias: AZ_Gamemode_Trigger
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.valorant
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: sensor.valorant
+        state: 'True'
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.gaming
+    default: []
+  mode: single
+- id: '1610295879979'
+  alias: MotionActivate_Flur
+  description: ''
+  use_blueprint:
+    path: freakshock88/motion_illuminance_activated_entity.yaml
+    input:
+      motion_sensor: binary_sensor.fl_motion_occupancy
+      target_entity: script.flurlicht_select_scene
+- id: '1610296403890'
+  alias: Motion Flur Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.fl_motion_occupancy
+    to: 'off'
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    entity_id: light.flurlicht
+  mode: single
+- id: '1610315058181'
+  alias: WZ_COUCH_BTN_Triple
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c3af060f9caf4016847443c00c56ad52
+    type: action
+    subtype: triple
+    discovery_id: 0x00158d0001243f43 action_triple
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.wohnung
+          state: 'off'
+      sequence:
+      - service: media_player.media_stop
+        data:
+          entity_id: media_player.wohnung
+    default: []
+  - service: media_player.turn_on
+    data:
+      entity_id: media_player.shield_tv
+  mode: single
+- id: '1610641016280'
+  alias: GHomeVolumeSynchronisation
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: climate.master_vol
+    attribute: temperature
+  condition: []
+  action:
+  - service: input_number.set_value
+    data_template:
+      value: '{{(state_attr("climate.master_vol", "temperature"))}}'
+    entity_id: input_number.volume
+  mode: single
+- id: '1610964650875'
+  alias: Nobody_Home_OnOff
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.is_home
+    to: 'off'
+    for: 'on'
+  - platform: state
+    entity_id: input_boolean.is_home
+    from: 'on'
+    to: 'off'
+  condition:
+  - condition: state
+    entity_id: input_boolean.besuch
+    state: 'off'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.is_home
+        state: 'off'
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_arbeitszimmer
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_bad
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_flur
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_schlafzimmer
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.appswitch_motion_wohnzimmer
+      - service: homeassistant.turn_off
+        data: {}
+        entity_id: group.non_necessary_automations
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.is_home
+        state: 'on'
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_arbeitszimmer
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_bad
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_flur
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_schlafzimmer
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.appswitch_motion_wohnzimmer
+      - service: homeassistant.turn_on
+        data: {}
+        entity_id: group.non_necessary_automations
+    default: []
+  mode: single

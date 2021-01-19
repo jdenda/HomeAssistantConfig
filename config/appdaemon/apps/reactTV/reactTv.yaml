@@ -1,0 +1,14 @@
+reactTv:
+  module: reactTv
+  class: ReactTv
+  media_player: media_player.shield_tv
+  motion: binary_sensor.binary_sensor.wz_motion_occupancy
+  adaptive_light: switch.adaptive_lighting_wohnzimmer
+  nightmode: input_boolean.nightmode
+  scene_movie: scene.wz_li_movie
+  scene_night: scene.wz_li_night
+  scene_movie_paused: scene.wz_li_movie_paused
+  script_normal: script.wz_li_day
+  lights: light.livingroom_lights
+  appswitch: input_boolean.appswitch_reacttv
+  besuch: input_boolean.besuch

@@ -1,0 +1,95 @@
+switch.pc_janneck:
+  friendly_name: PC Janneck
+  icon: mdi:desktop-classic
+fan.xiaomi_smart_fan:
+  friendly_name: Ventilator
+sensor.netcup_vserver_v220200380888111531:
+  icon: mdi:server
+sensor.netcup_vserver_v22019098088897732:
+  icon: mdi:server
+sensor.netcup_vserver_v220200680888121154:
+  icon: mdi:server
+light.bar:
+  friendly_name: Bar Hängelampe
+  type: light-color-temp
+  room: kueche
+light.bar_ambilight:
+  friendly_name: Bar Decke
+  type: light-rgb
+  room: kueche
+light.bar_back:
+  friendly_name: Bar Theke
+  type: light-rgb
+  room: kueche
+light.spot_couch:
+  friendly_name: Spot Couch
+  type: light-rgb
+  room: wohnzimmer
+light.spot_teekueche:
+  friendly_name: Spot Tee
+  type: light-rgb
+  room: wohnzimmer
+light.nanoleaf:
+  friendly_name: Nanoleaf
+  type: light-rgb
+  room: wohnzimmer
+light.esstisch1:
+  friendly_name: Esstisch Links
+  type: light-color-temp
+  room: wohnzimmer
+light.esstisch2:
+  friendly_name: Esstisch Rechts
+  type: light-color-temp
+  room: wohnzimmer
+light.wled:
+  friendly_name: WLED
+  type: light-rgb
+  room: arbeitszimmer
+light.extended_color_light_1:
+  friendly_name: Spot 1
+  type: light-rgb
+  room: arbeitszimmer  
+light.extended_color_light_2:
+  friendly_name: Spot 2
+  type: light-rgb
+  room: arbeitszimmer  
+light.extended_color_light_3:
+  friendly_name: Spot 3
+  type: light-rgb
+  room: arbeitszimmer  
+light.extended_color_light_4:
+  friendly_name: Spot 4
+  type: light-rgb
+  room: arbeitszimmer
+light.hue_lightstrip_plus_1:
+  friendly_name: Hue Strip
+  type: light-rgb
+  room: arbeitszimmer    
+light.hue_play_1:
+  friendly_name: Play 1
+  type: light-rgb
+  room: arbeitszimmer
+light.hue_play_2:
+  friendly_name: Play 2
+  type: light-rgb
+  room: arbeitszimmer  
+light.flurlicht:
+  friendly_name: Decke
+  type: light-color-temp
+  room: flur
+light.schreibtisch_backlight:
+  friendly_name: Backlight
+  type: light-rgb
+  room: bad
+light.schreibtischlampe:
+  friendly_name: Schreibtischlampe
+  type: light-rgb
+  room: schlafzimmer
+light.kommodenlampe:
+  friendly_name: Kommodenlampe
+  type: light-rgb
+  room: schlafzimmer    
+light.nachttischlampe:
+  friendly_name: Nachttischlampe
+  type: light-rgb
+  room: schlafzimmer

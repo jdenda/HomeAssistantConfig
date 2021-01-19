@@ -1,0 +1,6 @@
+platform: workday
+country: DE
+province: NW
+workdays: [mon, tue, wed, thu, fri]
+excludes: [sat, sun]
+name: Workday Today

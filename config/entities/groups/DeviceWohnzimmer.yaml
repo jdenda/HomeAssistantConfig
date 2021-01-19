@@ -1,0 +1,6 @@
+devices_wohnzimmer:
+  name: Device
+  entities:
+    - fan.xiaomi_smart_fan
+    - switch.k_lampe
+    - switch.receiver_2_power

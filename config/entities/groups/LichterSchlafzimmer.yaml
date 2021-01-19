@@ -1,0 +1,6 @@
+lights_schlafzimmer:
+  name: Lichter
+  entities:
+    - light.kommodenlampe
+    - light.schreibtischlampe
+    - light.nachttischlampe

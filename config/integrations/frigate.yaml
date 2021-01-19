@@ -1,0 +1,39 @@
+camera:
+  - name: test Last Person
+    platform: mqtt
+    topic: frigate/test/person/snapshot
+
+binary_sensor:
+  - name: test Person
+    platform: mqtt
+    state_topic: "frigate/test/person"
+    device_class: motion
+    availability_topic: "frigate/available"
+
+sensor:
+  - platform: rest
+    name: Frigate Debug
+    resource: !secret  frigate_url
+    scan_interval: 5
+    json_attributes:
+      - test
+      - detection_fps
+      - detectors
+    value_template: 'OK'  
+  - platform: template
+    sensors:
+      test_fps: 
+        value_template: '{{ states.sensor.frigate_debug.attributes["test"]["camera_fps"] }}'
+        unit_of_measurement: 'FPS'
+      test_skipped_fps: 
+        value_template: '{{ states.sensor.frigate_debug.attributes["test"]["skipped_fps"] }}'
+        unit_of_measurement: 'FPS'
+      test_detection_fps: 
+        value_template: '{{ states.sensor.frigate_debug.attributes["test"]["detection_fps"] }}'
+        unit_of_measurement: 'FPS'
+      frigate_detection_fps: 
+        value_template: '{{ states.sensor.frigate_debug.attributes["detection_fps"] }}'
+        unit_of_measurement: 'FPS'
+      frigate_coral_inference:
+        value_template: '{{ states.sensor.frigate_debug.attributes["detectors"]["coral"]["inference_speed"] }}' 
+        unit_of_measurement: 'ms'

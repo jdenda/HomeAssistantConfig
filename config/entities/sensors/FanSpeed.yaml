@@ -1,0 +1,11 @@
+platform: template
+sensors:
+  fan_speed:
+    friendly_name: 'Fan Speed'
+    # entity_id: sensor.tmp_wz_temperature
+    value_template: >-
+      {% if states('sensor.tmp_wz_temperature')|float > 30 %}
+        100
+      {%- else -%}
+        {{((states('sensor.tmp_wz_temperature')|float-20)*10)|round(0)|int}}
+      {%- endif%}

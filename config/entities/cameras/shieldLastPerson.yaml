@@ -1,0 +1,3 @@
+# name: Sield_Cam Last Person
+# platform: mqtt
+# topic: frigate/shield_cam/person/snapshot

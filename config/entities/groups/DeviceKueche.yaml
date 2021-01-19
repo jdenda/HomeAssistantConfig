@@ -1,0 +1,7 @@
+devices_kueche:
+  name: Device
+  entities:
+    - switch.arbeitsplatte
+    - switch.kleine_tasse
+    - switch.grosse_tasse
+    - switch.kanne

@@ -1,0 +1,7 @@
+platform: workday
+country: DE
+province: NW
+workdays: [mon, tue, wed, thu, fri]
+excludes: [sat, sun]
+days_offset: 1
+name: Workday Tomorrow

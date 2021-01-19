@@ -1,0 +1,22 @@
+# Default config
+homeassistant:
+
+  # modify entites on startup
+  customize: !include customize.yaml
+
+  # Load packages
+  packages: !include_dir_named integrations
+
+# includes Automations, which can be generated with build-in editor
+automation: !include automations.yaml
+
+# ignore different integrations on discovery
+discovery:
+  ignore:
+    - homekit
+
+# set loglevel for different applications
+logger: 
+  default: info
+
+default_config:

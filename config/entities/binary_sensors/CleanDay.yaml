@@ -1,0 +1,7 @@
+platform: workday
+country: DE
+province: NW
+workdays: [mon, wed, fri]
+excludes: [sat, sun, tue, thu]
+days_offset: 1
+name: Vacuum Day

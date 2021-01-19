@@ -1,0 +1,8 @@
+media_wohnzimmer:
+  name: Media
+  entities:
+    - media_player.shield
+    - media_player.shield_tv
+    - media_player.onkyo_receiver
+    - media_player.chromecastaudio1735
+    - media_player.spotify_dolphinxid99
