@@ -1,0 +1,5 @@
+platform: email
+email: !secret mail_user
+password: !secret mail_password
+imap_server: !secret mail_server
+imap_port: !secret mail_port

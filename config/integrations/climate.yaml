@@ -1,7 +1,7 @@
 climate:
   - platform: generic_thermostat
     name: master_vol
-    heater: switch.dummy1
+    heater: input_boolean.dummy1
     target_sensor: sensor.tmp_wohnzimmer_temperature
     min_temp: 0
     max_temp: 100

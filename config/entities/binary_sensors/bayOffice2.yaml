@@ -9,14 +9,10 @@
       prob_given_false: 0.1
       to_state: 'on'
     - platform: 'state'
-      entity_id: 'binary_sensor.r5_janneck_power_status'
+      entity_id: 'binary_sensor.pc_janneck'
       prob_given_true: 0.70
       prob_given_false: 0.2
       to_state: 'on'
-    - platform: 'numeric_state'
-      entity_id: 'sensor.r5_janneck_system_idle_time'
-      prob_given_true: 0.95
-      below: 300
     - platform: 'state'
       entity_id: input_boolean.gaming
       prob_given_true: 0.80

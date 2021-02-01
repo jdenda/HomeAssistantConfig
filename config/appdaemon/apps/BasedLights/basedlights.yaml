@@ -32,24 +32,24 @@ SchlafzimmerBasedLights:
 #   adaptive_light: switch.adaptive_lighting_schlafzimmer
 #   nightmode: input_boolean.nightmode
 
-BadBasedLights:
-  module: basedlights
-  class: BasedLights
-  app_switch: input_boolean.appswitch_motion_bad # turns app on/off
-  switches: 
-    - "switch.bad_lichtschalter" # switches which should be turned on and off
-  lights_brightness: 
-    - "light.schreibtisch_backlight" # switches which should be turned on and off
-  lights_color_temp: # switches which should be turned on and off
-  lights_color_rgb:
-  motion_sensor: binary_sensor.0x00158d00036b9e63_occupancy # conditional trigger for on and off 
-  baynesian_sensor: binary_sensor.baynesian_badezimmer # conditional trigger for on and off 
-  brightness_sensor: sensor.0x00158d00036b9e63_illuminance # brightness sensor
-  brightness_value: 150 # Turns lights on below value xxx
-  adaptive_light: switch.adaptive_lighting_badezimmer
-  nightmode: input_boolean.nightmode
-  on_scene: 
-  off_scene: 
+# BadBasedLights:
+#   module: basedlights
+#   class: BasedLights
+#   app_switch: input_boolean.appswitch_motion_bad # turns app on/off
+#   switches: 
+#     - "switch.bad_lichtschalter" # switches which should be turned on and off
+#   lights_brightness: 
+#     - "light.schreibtisch_backlight" # switches which should be turned on and off
+#   lights_color_temp: # switches which should be turned on and off
+#   lights_color_rgb:
+#   motion_sensor: binary_sensor.0x00158d00036b9e63_occupancy # conditional trigger for on and off 
+#   baynesian_sensor: binary_sensor.baynesian_badezimmer # conditional trigger for on and off 
+#   brightness_sensor: sensor.0x00158d00036b9e63_illuminance # brightness sensor
+#   brightness_value: 150 # Turns lights on below value xxx
+#   adaptive_light: switch.adaptive_lighting_badezimmer
+#   nightmode: input_boolean.nightmode
+#   on_scene: 
+#   off_scene: 
 
 # ArbeitszimmerBasedLights:
 #   module: basedlights

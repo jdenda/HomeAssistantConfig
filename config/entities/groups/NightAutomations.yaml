@@ -1,22 +1,15 @@
-non_necessary_automations:
-  name: Non necessary Automations
+night_off_automations:
+  name: Night Off Automations
   entities:
     - automation.az_btn_dbl
     - automation.az_btn_trppl
     - automation.wz_btn_couch_single
     - automation.az_game_mode_trigger
     - automation.az_gamemode_trigger
-    - automation.az_mo_lights
     - automation.az_pc_state
-    - automation.az_tv
     - automation.cf_bed
     - automation.new_automation_2
     - automation.notify_kaffeemaschine_vorbereitet
-    - automation.cf_err_notify
-    - automation.evt_kaffee_gross
-    - automation.evnt_kaffee
-    - automation.motion_flur_off
-    - automation.motionactivate_flur
     - automation.pc_changeaudioinput
     - automation.tag_charging_bedroom_is_scanned
     - automation.wz_btn_bar_double
@@ -24,7 +17,6 @@ non_necessary_automations:
     - automation.wz_btn_couch_double
     - automation.wz_btn_couch_single
     - automation.wz_couch_btn_triple
-    - automation.wz_mo
     - automation.wz_overwrite_esstisch
     - automation.wz_overwrite_kuche
     - automation.wz_overwrite_wohnzimmer

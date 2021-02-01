@@ -380,3 +380,22 @@ flurlicht_select_scene:
           mode: moonlight
     default: []
   mode: single
+going_to_bed:
+  alias: Going_to_Bed
+  sequence:
+  - service: scene.turn_on
+    data: {}
+    entity_id: scene.az_li_off
+  - service: scene.turn_on
+    data: {}
+    entity_id: scene.wz_li_all_off
+  - service: light.turn_off
+    data: {}
+    entity_id: light.flurlicht
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.bad_lichtschalter
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.night_off_automations
+  mode: single
