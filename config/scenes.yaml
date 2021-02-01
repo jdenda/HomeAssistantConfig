@@ -3089,3 +3089,73 @@
       update_available: false
       friendly_name: hue_play02
       supported_features: 63
+- id: '1612182833023'
+  name: WZ DAY KITCHEN Overwrite
+  entities:
+    light.bar:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 181
+      flowing: false
+      night_light: false
+      friendly_name: Bar Hängelampe
+      supported_features: 47
+      type: light-color-temp
+      room: kueche
+      state: 'on'
+    light.bar_back:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 105.081
+      - 72.549
+      rgb_color:
+      - 116
+      - 255
+      - 70
+      xy_color:
+      - 0.247
+      - 0.636
+      effect: Slowdown
+      flowing: true
+      friendly_name: Bar Theke
+      supported_features: 63
+      type: light-rgb
+      room: kueche
+      state: 'on'
+    switch.arbeitsplatte:
+      friendly_name: Arbeitsplatte
+      state: 'on'

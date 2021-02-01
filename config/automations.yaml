@@ -53,7 +53,7 @@
     default: []
   mode: single
 - id: '1596472979446'
-  alias: WZ_BT2_SNGL
+  alias: WZ_BT2_SNGL IDK
   description: ''
   trigger:
   - device_id: c3af060f9caf4016847443c00c56ad52
@@ -72,7 +72,7 @@
     service: automation.turn_off
   mode: single
 - id: '1592222764019'
-  alias: WZ_MO
+  alias: WZ Motionsensor trigger lights
   description: ''
   trigger:
   - entity_id: binary_sensor.wz_motion_occupancy
@@ -128,7 +128,7 @@
     default: []
   mode: restart
 - id: '1596531244478'
-  alias: WZ_BTN_DBL
+  alias: WZ_BTN_DBL IDK
   description: ''
   trigger:
   - device_id: c3af060f9caf4016847443c00c56ad52
@@ -147,7 +147,7 @@
     service: automation.turn_on
   mode: single
 - id: '1596531370556'
-  alias: WZ_BTN_TRPPL
+  alias: WZ_BTN_TRPPL IDK
   description: ''
   trigger:
   - device_id: c3af060f9caf4016847443c00c56ad52
@@ -241,7 +241,7 @@
         service: input_boolean.turn_off
   mode: single
 - id: '1596559002794'
-  alias: WZ_SHIELD
+  alias: WZ Control lights based on shield tv state
   description: ''
   trigger:
   - entity_id: media_player.shield_tv
@@ -371,7 +371,7 @@
       - service: script.wz_tv_all_off
   mode: single
 - id: '1596711904196'
-  alias: CF_VAC_CLEANED
+  alias: CF Vacuum correct cleaned boolean
   description: ''
   trigger:
   - entity_id: vacuum.rockrobo
@@ -402,13 +402,13 @@
     default: []
   mode: single
 - id: '1596712132325'
-  alias: CF_VAC_START
+  alias: CF Start Vacuum between 9 and 10 when not already cleaned
   description: ''
   trigger:
-  - hours: '14'
+  - hours: '9'
     minutes: /5
     platform: time_pattern
-  - hours: '15'
+  - hours: '10'
     minutes: /5
     platform: time_pattern
   condition:
@@ -436,7 +436,7 @@
     entity_id: input_boolean.vaccumed
   mode: single
 - id: '1596713408877'
-  alias: EVT_VAC_STOP
+  alias: EVT Stop Vacuum Cleaning Process and return to Dock
   description: ''
   trigger:
   - event_data:
@@ -493,7 +493,7 @@
       service: switch.turn_off
   mode: single
 - id: '1598352938744'
-  alias: EVT_Kaffee
+  alias: EVT turns "kleine Tasse" on
   description: ''
   trigger:
   - event_data:
@@ -508,7 +508,7 @@
     service: switch.turn_on
   mode: single
 - id: '1598371562182'
-  alias: CF_OFF
+  alias: 'CF Nobody Home '
   description: ''
   trigger:
   - entity_id: input_boolean.is_home
@@ -516,7 +516,10 @@
     from: 'on'
     platform: state
     to: 'off'
-  condition: []
+  condition:
+  - condition: state
+    entity_id: input_boolean.besuch
+    state: 'off'
   action:
   - data: {}
     entity_id: group.all_lights
@@ -536,13 +539,12 @@
   - data: {}
     entity_id: switch.beamer_power
     service: switch.turn_off
-  - delay: 00:00:10
-  - data: {}
-    entity_id: automation.cf_on
-    service: automation.turn_on
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.non_necessary_automations
   mode: single
 - id: '1598371651484'
-  alias: CF_ON
+  alias: CF Somebody Came Home
   description: ''
   trigger:
   - entity_id: input_boolean.is_home
@@ -556,7 +558,7 @@
     service: homeassistant.turn_on
   mode: single
 - id: '1598884626658'
-  alias: EVT_Kaffee_groß
+  alias: 'EVT turns "große Tasse" on '
   description: ''
   trigger:
   - event_data:
@@ -635,7 +637,7 @@
     entity_id: input_boolean.nightmode
   mode: single
 - id: '1602052894893'
-  alias: Notify_Kaffeemaschine:Vorbereitet
+  alias: NTF Coffee is prepaired for the next day
   description: ''
   trigger:
   - platform: state
@@ -651,7 +653,7 @@
       message: Wurde für den nächsten Tag vorbereitet!
   mode: single
 - id: '1603313949122'
-  alias: CF_VAC_RESET
+  alias: CF vacuum reset cleaned boolean
   description: ''
   trigger:
   - platform: time
@@ -741,7 +743,7 @@
     default: []
   mode: single
 - id: '1608762126699'
-  alias: CF_Bed
+  alias: CF_Bed IDK
   description: ''
   trigger:
   - platform: state
@@ -796,8 +798,6 @@
   description: ''
   trigger:
   - platform: time
-    at: 09:00:00
-  - platform: time
     at: '15:00:00'
   condition:
   - condition: state
@@ -815,9 +815,13 @@
       payload: "{ \"command\": \"zoned_cleanup\", \"zone_ids\": [\n   \"Foo\",\n \
         \  {\n        \"id\": \"Bad\",\n        \"repeats\": 2\n   }\n], \"afterCleaning\"\
         : \"Base\" }"
+  - service: notify.mobile_app_pixel_4_xl
+    data:
+      title: Saugroboter
+      message: Schicke Roborock ins Badezimmer!
   mode: single
 - id: '1610047120060'
-  alias: WZ_BTN_COUCH_Double
+  alias: WZ BTN Couch Double play/pause shield tv
   description: ''
   trigger:
   - platform: device
@@ -915,7 +919,7 @@
     default: []
   mode: single
 - id: '1610142557556'
-  alias: WZ_BTN_COUCH_SINGLE
+  alias: WZ BTN Couch Single overwrite lights livingroom
   description: ''
   trigger:
   - platform: device
@@ -933,7 +937,7 @@
     data: {}
   mode: single
 - id: '1610142736385'
-  alias: WZ_OVERWRITE_WOHNZIMMER
+  alias: WZ Livingroom overwrite lights on / off
   description: ''
   trigger:
   - platform: state
@@ -973,7 +977,7 @@
     default: []
   mode: single
 - id: '1610150895214'
-  alias: WZ_BTN_BAR_SINGLE
+  alias: WZ BTN Bar Single overwrite light dining table
   description: ''
   trigger:
   - platform: device
@@ -989,7 +993,7 @@
     entity_id: input_boolean.overwrite_esstisch
   mode: single
 - id: '1610151030297'
-  alias: WZ_OVERWRITE_ESSTISCH
+  alias: WZ Diningtable overwrite lights on / off
   description: ''
   trigger:
   - platform: state
@@ -1023,7 +1027,7 @@
     data: {}
   mode: single
 - id: '1610152964269'
-  alias: WZ_BTN_Bar_Double
+  alias: WZ BTN Bar Double overwrite light kitchen
   description: ''
   trigger:
   - platform: device
@@ -1039,17 +1043,42 @@
     entity_id: input_boolean.overwrite_kuche
   mode: single
 - id: '1610153073376'
-  alias: WZ_OVERWRITE_Küche
+  alias: WZ Kitchen overwrite lights on / off
   description: ''
   trigger:
   - platform: state
     entity_id: input_boolean.overwrite_kuche
   condition: []
   action:
+  - service: scene.create
+    data:
+      scene_id: before_overwrite_kitchen
+      entities:
+      - light.bar
+      - light.bar_ambilight
+      - light.bar_back
+      - switch.arbeitsplatte
   - choose:
-    - conditions: []
-      sequence: []
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.overwrite_kuche
+        state: 'on'
+      sequence:
+      - scene: scene.wz_day_kitchen_overwrite
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.overwrite_kuche
+        state: 'off'
+      sequence:
+      - service: scene.turn_on
+        data: {}
+        entity_id: scene.before_overwrite_kitchen
+      - service: automation.trigger
+        data: {}
+        entity_id: automation.wz_shield
     default: []
+  - service: script.wz_notify_action
+    data: {}
   mode: single
 - id: '1610205902135'
   alias: AZ When Baynesian Off Turn Lights Off
@@ -1088,7 +1117,7 @@
     default: []
   mode: single
 - id: '1610315058181'
-  alias: WZ_COUCH_BTN_Triple
+  alias: WZ BTN Couch Tripple start shield tv and stop media_player.wohnung
   description: ''
   trigger:
   - platform: device
