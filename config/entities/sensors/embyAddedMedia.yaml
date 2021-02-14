@@ -3,9 +3,9 @@ api_key: !secret emby_token
 user_id: !secret emby_id
 host: !secret emby_host
 port: !secret emby_port
-ssl: false
+ssl: true
 max: 5
-use_backdrop: true
+use_backdrop: false
 include:
   - Movies
   - TV Shows

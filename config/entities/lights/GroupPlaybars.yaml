@@ -1,0 +1,6 @@
+platform: group
+name: Spots
+entities:
+  - light.play01
+  - light.play02
+  - light.spot_couch

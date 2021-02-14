@@ -1,10 +1,16 @@
 {
   "title": "Tapo: Cameras Control",
   "config": {
+    "flow_title": "Tapo: Cameras Control {name}",
     "step": {
+      "ip": {
+        "data": {
+          "ip_address": "IP Address"
+        },
+        "description": "Enter camera IP address.\n\nMake sure to create camera account.\n\nCamera account is created via Tapo app at:\nCamera Settings > Advanced Settings > Camera Account.\n\n\n\nIf you are using vlans, or some other advanced networking, make sure ports 443, 554 and 2020 are opened for camera."
+      },
       "auth": {
         "data": {
-          "ip_address": "IP Address",
           "username": "Username",
           "password": "Password"
         },
@@ -19,17 +25,25 @@
       "other_options": {
         "data": {
           "enable_motion_sensor": "Enable motion sensor",
+          "enable_time_sync": "Automatically synchronise time",
           "enable_stream": "Use Stream from Home Assistant"
         },
         "description": "Almost there!\nJust some final options..."
       }
     },
     "error": {
+      "not_tapo_device": "IP address is not a supported Tapo device",
+      "ports_closed": "Port 443, 554, or 2020 is closed",
       "invalid_auth": "Invalid authentication data",
       "unknown": "Unknown error",
       "connection_failed": "Connection failed",
       "invalid_auth_cloud": "Invalid cloud password",
-      "camera_requires_admin": "Your camera requires cloud password for control"
+      "camera_requires_admin": "Your camera requires cloud password for control",
+      "already_configured": "IP address already configured"
+    },
+    "abort": {
+      "already_configured": "IP address already configured",
+      "not_tapo_device": "Discovered device is not a Tapo camera"
     }
   },
   "options": {
@@ -41,9 +55,10 @@
           "password": "Password",
           "enable_motion_sensor": "Enable motion sensor",
           "enable_stream": "Use Stream from Home Assistant [requires restart]",
+          "enable_time_sync": "Automatically synchronise time",
           "cloud_password": "Cloud Password (Optional)"
         },
-        "description": "Modify settings of your Tapo Camera.\n\nUse stream from Home Assistant:\nYes - Longer playback delay, allows playback control\nNo - Very short playback delay, no playback control"
+        "description": "Modify settings of your Tapo Camera.\n\nUse stream from Home Assistant:\nYes - Longer playback delay, lower CPU usage, allows playback control\nNo - Very short playback delay, higher CPU usage, no playback control"
       }
     },
     "error": {

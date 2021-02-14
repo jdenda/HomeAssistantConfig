@@ -165,7 +165,7 @@ class EmbyUpcomingMediaSensor(Entity):
 
             card_json.append(card_item)
 
-        attributes["data"] = json.dumps(card_json)
+        attributes['data'] = card_json
         attributes["attribution"] = ATTRIBUTION
 
         return attributes
@@ -215,7 +215,7 @@ class EmbyUpcomingMediaSensor(Entity):
 
             card_json.append(card_item)
 
-        attributes["data"] = json.dumps(card_json)
+        attributes['data'] = card_json
         attributes["attribution"] = ATTRIBUTION
 
         return attributes
@@ -272,7 +272,7 @@ class EmbyUpcomingMediaSensor(Entity):
 
                 card_json.append(card_item)
 
-            attributes["data"] = json.dumps(card_json)
+            attributes['data'] = card_json
             attributes["attribution"] = ATTRIBUTION
 
         return attributes

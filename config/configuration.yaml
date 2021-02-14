@@ -1,6 +1,5 @@
 # Default config
 homeassistant:
-
   # modify entites on startup
   customize: !include customize.yaml
 
@@ -16,7 +15,89 @@ discovery:
     - homekit
 
 # set loglevel for different applications
-logger: 
+logger:
   default: info
 
 default_config:
+
+lovelace:
+  mode: storage
+  # Add yaml dashboards
+  resources:
+  - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
+    type: module
+  - url: /hacsfiles/bar-card/bar-card.js
+    type: module
+  - url: /hacsfiles/lovelace-buien-rain-card/buien-rain-card.js
+    type: module    
+  - url: /hacsfiles/button-card/button-card.js
+    type: module
+  - url: /local/calendar-card.js?v=31091
+    type: module
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
+    type: module
+  - url: /hacsfiles/lovelace-card-preloader/lovelace-card-preloader.js
+    type: module  
+  - url: /local/custom_icons.js #?v=25052001
+    type: module
+  - url: /local/font.css
+    type: css    
+  - url: /hacsfiles/config-template-card/config-template-card.js
+    type: module
+  - url: /hacsfiles/decluttering-card/decluttering-card.js
+    type: module
+  - url: /hacsfiles/Homekit-panel-card/homekit-panel-card.js
+    type: module  
+  - url: /hacsfiles/lovelace-hui-element/hui-element.js
+    type: module    
+  - url: /hacsfiles/kiosk-mode/kiosk-mode.js
+    type: module
+  - url: /hacsfiles/lovelace-layout-card/layout-card.js
+    type: module    
+  - url: /hacsfiles/light-entity-card/light-entity-card.js
+    type: module
+  - url: /hacsfiles/light-popup-card/light-popup-card.js
+    type: module    
+  - url: /local/custom-lovelace/light-slider-card-lajv.js
+    type: js    
+  - url: /hacsfiles/Home-Assistant-Lovelace-Local-Conditional-card/local-conditional-card.js
+    type: module
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
+    type: module 
+  - url: /hacsfiles/lovelace-more-info-card/more-info-card.js
+    type: module
+  - url: /hacsfiles/now-playing-card/now-playing-card.js
+    type: module      
+  - url: /hacsfiles/simple-thermostat/simple-thermostat.js
+    type: module  
+  - url: /hacsfiles/simple-weather-card/simple-weather-card-bundle.js
+    type: module 
+  - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
+    type: module
+  - url: /hacsfiles/spotify-card/spotify-card.js
+    type: module
+  - url: /hacsfiles/stack-in-card/stack-in-card.js
+    type: module    
+  - url: /hacsfiles/surveillance-card/surveillance-card.js
+    type: module
+  - url: /hacsfiles/swipe-card/swipe-card.js
+    type: module
+  - url: /hacsfiles/lovelace-template-entity-row/template-entity-row.js
+    type: module
+  - url: /hacsfiles/transmission-card/transmission-card.js
+    type: module
+  - url: /hacsfiles/upcoming-media-card/upcoming-media-card.js
+    type: module  
+  - url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
+    type: module    
+  - url: /hacsfiles/weather-card/weather-card.js
+    type: module
+  dashboards:
+    lovelace-yaml:
+      mode: yaml
+      title: YAML
+      icon: mdi:script
+      show_in_sidebar: true
+      filename: dashboard.yaml

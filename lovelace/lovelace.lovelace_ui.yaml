@@ -2,7 +2,22 @@ config:
   title: Home
   views:
   - badges: []
-    cards: []
+    cards:
+    - entity: switch.adaptive_lighting_schlafzimmer
+      tap_action:
+        action: toggle
+      type: button
+    - entity: sensor.emby_latest_movies
+      style:
+        left: 84%
+        top: 25%
+        width: 18%
+      title: Recently Added Tv
+      type: custom:upcoming-media-card
+    - entity: switch.pc_janneck
+      tap_action:
+        action: toggle
+      type: button
     path: home
     title: home
   - badges: []

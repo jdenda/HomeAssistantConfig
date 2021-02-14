@@ -8,11 +8,11 @@
       prob_given_true: 0.90
       prob_given_false: 0.1
       to_state: 'on'
-    - platform: 'state'
-      entity_id: 'binary_sensor.pc_janneck'
-      prob_given_true: 0.70
+    - platform: 'numeric_state'
+      entity_id: 'sensor.pc_idle_time'
+      prob_given_true: 0.8
       prob_given_false: 0.2
-      to_state: 'on'
+      below: '1500'
     - platform: 'state'
       entity_id: input_boolean.gaming
       prob_given_true: 0.80

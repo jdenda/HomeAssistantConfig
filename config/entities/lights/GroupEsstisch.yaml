@@ -1,0 +1,5 @@
+platform: group
+name: esstisch
+entities:
+  - light.esstisch_1
+  - light.esstisch_2

@@ -18,13 +18,13 @@ class Netcup(hass.Hass):
 
     def getvalues(self, kwargs):
 
-        # get list with all servers 
+        # get list with all servers
         serversExists = False
-        try: 
+        try:
             result = self.client.service.getVServers(self.scp_user, self.scp_api_passw)
             self.set_state("sensor.netcup_vserver",state=result)
             servers = list(result)
-            serversExists = True 
+            serversExists = True
         except:
             self.log("Couldnt get Server list, check configuration")
         if(serversExists == True):
@@ -37,51 +37,51 @@ class Netcup(hass.Hass):
 
     def createServers(self, kwargs):
         serverstate = None
-        try: 
+        try:
             serverstate = self.client.service.getVServerState(self.scp_user, self.scp_api_passw, self.server)
             self.log("Server "+ format(self.server) + " " + format(serverstate))
-        except: 
+        except:
             self.log("Couldnt get State for "+ format(self.server))
 
         nickname = None
-        try: 
+        try:
             nickname = self.client.service.getVServerNickname(self.scp_user, self.scp_api_passw, self.server)
             self.log("Server "+ format(self.server) + " " + format(nickname))
-        except: 
+        except:
             self.log("Couldnt get Nickname for "+ format(self.server))
-            
+
         ips = None
-        try: 
+        try:
             ips = self.client.service.getVServerIPs(self.scp_user, self.scp_api_passw, self.server)
             self.log("Server "+ format(self.server) + " " + format(ips[0]))
             self.log("Server "+ format(self.server) + " " + format(ips[1]))
-        except: 
+        except:
             self.log("Couldnt get IP Adresses for "+ format(self.server))
-        
+
         uptime = None
-        try: 
+        try:
             uptime = self.client.service.getVServerUptime(self.scp_user, self.scp_api_passw, self.server)
             self.log("Server "+ format(self.server) + " " + format(uptime))
-        except: 
+        except:
             self.log("Couldnt get Uptime for "+ format(self.server))
-        
+
         infor = None
-        try: 
+        try:
             infor = self.client.service.getVServerInformation(self.scp_user, self.scp_api_passw, self.server)
             self.log("Server "+ format(self.server) + " Additional Information")
-        except: 
+        except:
             self.log("Couldnt get Additional Information for "+ format(self.server))
 
         listee = infor[8]
         sensorserver = "sensor.netcup_vserver_"+ format(self.server)
-        try: 
+        try:
             self.set_state(sensorserver,state=serverstate.capitalize(),attributes={"friendly_name": nickname, "IPv4": ips[0], "IPv6": ips[1], "Uptime": uptime, "Cores": infor[0], "Memory": infor[3], "Reboot recommended": infor[4], "HDD Size": listee[0][0], "HDD Used": listee[0][5], "Optimization Recommended": listee[0][3], "Optimization Message": listee[0][4]})
             self.log("Created / Updated sensor for "+ format(self.server))
         except:
             self.log("Couldnt create / update sensor for " + format(self.server) + " Please check configuration")
         # create single sensors
         # if (singles == True):
-        #     try: 
+        #     try:
 
 
 

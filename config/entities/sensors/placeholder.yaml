@@ -1,0 +1,7 @@
+platform: template
+sensors:
+  placeholder:
+      friendly_name: 'Placeholder'
+      value_template: >-
+        {{" "|string}}
+

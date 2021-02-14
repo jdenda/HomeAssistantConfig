@@ -1170,6 +1170,7 @@
       - 0.701
       - 0.299
       flowing: false
+      music_mode: false
       night_light: false
       friendly_name: Bar Decke
       supported_features: 63
@@ -1219,6 +1220,7 @@
       - 0.701
       - 0.299
       flowing: false
+      music_mode: false
       friendly_name: Bar Theke
       supported_features: 63
       type: light-rgb
@@ -1238,7 +1240,7 @@
       - Northern Lights
       - Romantic
       - Snowfall
-      brightness: 10
+      brightness: 5
       effect: Netflix And Chill
       friendly_name: Nanoleaf
       icon: mdi:triangle-outline
@@ -1289,6 +1291,7 @@
       - 0.701
       - 0.299
       flowing: false
+      music_mode: false
       friendly_name: Spot Couch
       supported_features: 63
       type: light-rgb
@@ -1337,6 +1340,7 @@
       - 0.701
       - 0.299
       flowing: false
+      music_mode: false
       friendly_name: Spot Tee
       supported_features: 63
       type: light-rgb
@@ -1345,7 +1349,7 @@
     switch.k_lampe:
       friendly_name: K Lampe
       state: 'on'
-    light.hue_play01:
+    light.play01:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1355,7 +1359,7 @@
       - channel_change
       - finish_effect
       - stop_effect
-      brightness: 127
+      brightness: 13
       color_temp: 37
       hs_color:
       - 0
@@ -1375,9 +1379,9 @@
       update:
         state: idle
       update_available: false
-      friendly_name: hue_play01
+      friendly_name: Play01
       supported_features: 63
-    light.hue_play02:
+    light.play02:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1387,28 +1391,60 @@
       - channel_change
       - finish_effect
       - stop_effect
-      brightness: 127
-      color_temp: 193
+      brightness: 13
+      color_temp: 37
       hs_color:
       - 0
-      - 84.314
+      - 100
       rgb_color:
       - 255
-      - 39
-      - 39
+      - 0
+      - 0
       xy_color:
-      - 0.677
-      - 0.301
+      - 0.701
+      - 0.299
       color:
-        x: 0.68
-        y: 0.301
-      linkquality: 63
+        x: 0.701
+        y: 0.299
+      linkquality: 44
       state: 'on'
       update:
         state: idle
       update_available: false
-      friendly_name: hue_play02
+      friendly_name: Play02
       supported_features: 63
+    light.esstisch_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 253
+      color_temp: 153
+      linkquality: 63
+      state: 'off'
+      friendly_name: esstisch 1
+      supported_features: 47
+    light.esstisch_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 255
+      color_temp: 153
+      linkquality: 57
+      state: 'off'
+      friendly_name: esstisch 2
+      supported_features: 47
   icon: mdi:weather-night
 - id: '1596559201875'
   name: WZ_LI_MOVIE
@@ -1420,6 +1456,7 @@
       - Slow Temp
       - Stop
       flowing: false
+      music_mode: false
       night_light: false
       friendly_name: Bar Hängelampe
       supported_features: 47
@@ -1469,6 +1506,7 @@
       - 0.299
       - 0.115
       flowing: false
+      music_mode: false
       night_light: false
       friendly_name: Bar Decke
       supported_features: 63
@@ -1518,6 +1556,7 @@
       - 0.136
       - 0.04
       flowing: false
+      music_mode: false
       friendly_name: Bar Theke
       supported_features: 63
       type: light-rgb
@@ -1537,7 +1576,7 @@
       - Northern Lights
       - Romantic
       - Snowfall
-      brightness: 22
+      brightness: 17
       effect: Netflix And Chill
       friendly_name: Nanoleaf
       icon: mdi:triangle-outline
@@ -1588,6 +1627,7 @@
       - 0.136
       - 0.04
       flowing: false
+      music_mode: false
       friendly_name: Spot Couch
       supported_features: 63
       type: light-rgb
@@ -1636,6 +1676,7 @@
       - 0.157
       - 0.05
       flowing: false
+      music_mode: false
       friendly_name: Spot Tee
       supported_features: 63
       type: light-rgb
@@ -1647,7 +1688,7 @@
     switch.k_lampe:
       friendly_name: K Lampe
       state: 'on'
-    light.hue_play01:
+    light.play01:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1657,109 +1698,7 @@
       - channel_change
       - finish_effect
       - stop_effect
-      brightness: 142
-      color_temp: 65
-      hs_color:
-      - 226.176
-      - 80
-      rgb_color:
-      - 50
-      - 98
-      - 255
-      xy_color:
-      - 0.151
-      - 0.104
-      color:
-        x: 0.149
-        y: 0.098
-      linkquality: 55
-      state: 'on'
-      update:
-        state: idle
-      update_available: false
-      friendly_name: hue_play01
-      supported_features: 63
-    light.hue_play02:
-      min_mireds: 153
-      max_mireds: 500
-      effect_list:
-      - blink
-      - breathe
-      - okay
-      - channel_change
-      - finish_effect
-      - stop_effect
-      brightness: 64
-      color_temp: 582
-      hs_color:
-      - 242.069
-      - 79.608
-      rgb_color:
-      - 58
-      - 51
-      - 255
-      xy_color:
-      - 0.154
-      - 0.065
-      color:
-        x: 0.151
-        y: 0.06
-      linkquality: 65
-      state: 'on'
-      update:
-        state: idle
-      update_available: false
-      friendly_name: hue_play02
-      supported_features: 63
-    light.li_esstisch1:
-      min_mireds: 153
-      max_mireds: 500
-      effect_list:
-      - blink
-      - breathe
-      - okay
-      - channel_change
-      - finish_effect
-      - stop_effect
-      brightness: 254
-      color_temp: 153
-      linkquality: 78
-      state: 'off'
-      friendly_name: li_esstisch1
-      supported_features: 47
-    light.li_esstisch_2_light:
-      min_mireds: 153
-      max_mireds: 500
-      effect_list:
-      - blink
-      - breathe
-      - okay
-      - channel_change
-      - finish_effect
-      - stop_effect
-      brightness: 187
-      color_temp: 153
-      linkquality: 68
-      state: 'off'
-      friendly_name: li_esstisch_2_light
-      supported_features: 47
-- id: '1610036464631'
-  name: WZ_LI_DAY
-  entities:
-    switch.k_lampe:
-      friendly_name: K Lampe
-      state: 'on'
-    light.hue_play01:
-      min_mireds: 153
-      max_mireds: 500
-      effect_list:
-      - blink
-      - breathe
-      - okay
-      - channel_change
-      - finish_effect
-      - stop_effect
-      brightness: 252
+      brightness: 13
       color_temp: 130
       hs_color:
       - 242.683
@@ -1774,14 +1713,14 @@
       color:
         x: 0.137
         y: 0.041
-      linkquality: 52
+      linkquality: 55
       state: 'on'
       update:
         state: idle
       update_available: false
-      friendly_name: hue_play01
+      friendly_name: Play01
       supported_features: 63
-    light.hue_play02:
+    light.play02:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1791,28 +1730,66 @@
       - channel_change
       - finish_effect
       - stop_effect
-      brightness: 253
-      color_temp: 37
+      brightness: 13
+      color_temp: 130
       hs_color:
-      - 0
-      - 100
+      - 242.683
+      - 96.471
       rgb_color:
+      - 19
+      - 8
       - 255
-      - 0
-      - 0
       xy_color:
-      - 0.701
-      - 0.299
+      - 0.138
+      - 0.042
       color:
-        x: 0.701
-        y: 0.299
-      linkquality: 57
+        x: 0.137
+        y: 0.041
+      linkquality: 44
       state: 'on'
       update:
         state: idle
       update_available: false
-      friendly_name: hue_play02
+      friendly_name: Play02
       supported_features: 63
+    light.esstisch_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 254
+      color_temp: 153
+      linkquality: 57
+      state: 'off'
+      friendly_name: esstisch 1
+      supported_features: 47
+    light.esstisch_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 255
+      color_temp: 153
+      linkquality: 57
+      state: 'off'
+      friendly_name: esstisch 2
+      supported_features: 47
+- id: '1610036464631'
+  name: WZ_LI_DAY
+  entities:
+    switch.k_lampe:
+      friendly_name: K Lampe
+      state: 'on'
     light.spot_couch:
       min_mireds: 153
       max_mireds: 588
@@ -1857,6 +1834,7 @@
       - 0.04
       effect: Slow Temp
       flowing: true
+      music_mode: false
       friendly_name: Spot Couch
       supported_features: 63
       type: light-rgb
@@ -1906,6 +1884,7 @@
       - 0.05
       effect: Slow Temp
       flowing: true
+      music_mode: false
       friendly_name: Spot Tee
       supported_features: 63
       type: light-rgb
@@ -1944,8 +1923,8 @@
       brightness: 255
       color_temp: 250
       hs_color:
-      - 105
-      - 72.157
+      - 105.081
+      - 72.549
       rgb_color:
       - 116
       - 255
@@ -1955,6 +1934,7 @@
       - 0.636
       effect: Slowdown
       flowing: true
+      music_mode: false
       friendly_name: Bar Theke
       supported_features: 63
       type: light-rgb
@@ -1967,8 +1947,9 @@
       - Slow Temp
       - Stop
       brightness: 255
-      color_temp: 213
+      color_temp: 181
       flowing: false
+      music_mode: false
       night_light: false
       friendly_name: Bar Hängelampe
       supported_features: 47
@@ -2018,6 +1999,7 @@
       - 0.299
       - 0.115
       flowing: false
+      music_mode: false
       night_light: false
       friendly_name: Bar Decke
       supported_features: 63
@@ -2038,7 +2020,7 @@
       - Northern Lights
       - Romantic
       - Snowfall
-      brightness: 254
+      brightness: 249
       effect: Inner Peace
       friendly_name: Nanoleaf
       icon: mdi:triangle-outline
@@ -2046,10 +2028,7 @@
       type: light-rgb
       room: wohnzimmer
       state: 'on'
-- id: '1610057647139'
-  name: WZ_LI_ALL_OFF
-  entities:
-    light.hue_play01:
+    light.play01:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -2059,40 +2038,95 @@
       - channel_change
       - finish_effect
       - stop_effect
-      brightness: 251
-      color:
-        x: 0.138
-        y: 0.042
-      color_temp: 130
-      linkquality: 81
-      state: 'off'
-      update:
-        state: idle
-      update_available: false
-      friendly_name: hue_play01
-      supported_features: 63
-    light.hue_play02:
-      min_mireds: 153
-      max_mireds: 500
-      effect_list:
-      - blink
-      - breathe
-      - okay
-      - channel_change
-      - finish_effect
-      - stop_effect
-      brightness: 252
+      brightness: 243
+      color_temp: 37
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
       color:
         x: 0.701
         y: 0.299
-      color_temp: 37
-      linkquality: 73
-      state: 'off'
+      linkquality: 55
+      state: 'on'
       update:
         state: idle
       update_available: false
-      friendly_name: hue_play02
+      friendly_name: Play01
       supported_features: 63
+    light.play02:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 253
+      color_temp: 130
+      hs_color:
+      - 242.683
+      - 96.471
+      rgb_color:
+      - 19
+      - 8
+      - 255
+      xy_color:
+      - 0.138
+      - 0.042
+      color:
+        x: 0.137
+        y: 0.041
+      linkquality: 47
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Play02
+      supported_features: 63
+    light.esstisch_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 255
+      color_temp: 153
+      linkquality: 63
+      state: 'on'
+      friendly_name: esstisch 1
+      supported_features: 47
+    light.esstisch_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 255
+      color_temp: 153
+      linkquality: 47
+      state: 'on'
+      friendly_name: esstisch 2
+      supported_features: 47
+- id: '1610057647139'
+  name: WZ_LI_ALL_OFF
+  entities:
     light.spot_couch:
       min_mireds: 153
       max_mireds: 588
@@ -2124,6 +2158,7 @@
       - Slow Temp
       - Stop
       flowing: true
+      music_mode: false
       friendly_name: Spot Couch
       supported_features: 63
       type: light-rgb
@@ -2160,6 +2195,7 @@
       - Slow Temp
       - Stop
       flowing: true
+      music_mode: false
       friendly_name: Spot Tee
       supported_features: 63
       type: light-rgb
@@ -2196,6 +2232,7 @@
       - Slow Temp
       - Stop
       flowing: false
+      music_mode: false
       night_light: false
       friendly_name: Bar Decke
       supported_features: 63
@@ -2209,6 +2246,7 @@
       - Slow Temp
       - Stop
       flowing: false
+      music_mode: false
       night_light: false
       friendly_name: Bar Hängelampe
       supported_features: 47
@@ -2246,6 +2284,7 @@
       - Slow Temp
       - Stop
       flowing: true
+      music_mode: false
       friendly_name: Bar Theke
       supported_features: 63
       type: light-rgb
@@ -2257,38 +2296,6 @@
     switch.arbeitsplatte:
       friendly_name: Arbeitsplatte
       state: 'off'
-    light.li_esstisch1:
-      min_mireds: 153
-      max_mireds: 500
-      effect_list:
-      - blink
-      - breathe
-      - okay
-      - channel_change
-      - finish_effect
-      - stop_effect
-      brightness: 254
-      color_temp: 153
-      linkquality: 78
-      state: 'off'
-      friendly_name: li_esstisch1
-      supported_features: 47
-    light.li_esstisch_2_light:
-      min_mireds: 153
-      max_mireds: 500
-      effect_list:
-      - blink
-      - breathe
-      - okay
-      - channel_change
-      - finish_effect
-      - stop_effect
-      brightness: 187
-      color_temp: 153
-      linkquality: 76
-      state: 'off'
-      friendly_name: li_esstisch_2_light
-      supported_features: 47
     light.nanoleaf:
       min_mireds: 154
       max_mireds: 833
@@ -2309,6 +2316,82 @@
       type: light-rgb
       room: wohnzimmer
       state: 'off'
+    light.play01:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 242
+      color:
+        x: 0.701
+        y: 0.299
+      color_temp: 37
+      linkquality: 55
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Play01
+      supported_features: 63
+    light.play02:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 252
+      color:
+        x: 0.138
+        y: 0.042
+      color_temp: 130
+      linkquality: 47
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Play02
+      supported_features: 63
+    light.esstisch_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 255
+      color_temp: 153
+      linkquality: 63
+      state: 'off'
+      friendly_name: esstisch 1
+      supported_features: 47
+    light.esstisch_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 255
+      color_temp: 153
+      linkquality: 47
+      state: 'off'
+      friendly_name: esstisch 2
+      supported_features: 47
 - id: '1610134800580'
   name: AZ_GAMING
   entities:
