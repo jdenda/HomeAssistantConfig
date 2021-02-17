@@ -63,7 +63,7 @@ def decrypt(payload: dict, devicekey: str):
         hash_.update(devicekey)
         key = hash_.digest()
 
-        encoded = ''.join([payload[f'data{i}'] for i in range(1, 4, 1)
+        encoded = ''.join([payload[f'data{i}'] for i in range(1, 5, 1)
                            if f'data{i}' in payload])
 
         cipher = AES.new(key, AES.MODE_CBC, iv=b64decode(payload['iv']))
@@ -179,10 +179,14 @@ class EWeLinkLocal:
             if data and data.startswith(b'{"rf'):
                 data = data.replace(b'"="', b'":"')
         else:
-            data = ''.join([properties[f'data{i}'] for i in range(1, 4, 1)
+            data = ''.join([properties[f'data{i}'] for i in range(1, 5, 1)
                             if f'data{i}' in properties])
 
-        state = json.loads(data)
+        try:
+            state = json.loads(data)
+        except:
+            _LOGGER.debug(f"{log} !! Wrong JSON data: {data}")
+            return
         seq = properties.get('seq')
 
         _LOGGER.debug(f"{log} | {state} | {seq}")
