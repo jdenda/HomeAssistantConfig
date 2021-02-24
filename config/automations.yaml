@@ -1205,20 +1205,6 @@
         entity_id: group.non_necessary_automations
     default: []
   mode: single
-- id: '1611307580938'
-  alias: BAD State Based Entity Control for Lights
-  description: ''
-  use_blueprint:
-    path: kevinxw/state_based_entity_control.yaml
-    input:
-      trigger_entity: binary_sensor.0x00158d00036b9e63_occupancy
-      target_entity: switch.bad_lichtschalter
-      target_entity_action_on: switch.turn_on
-      target_entity_action_off: switch.turn_off
-      blocker_entity: binary_sensor.duschen
-      blocker_entity_state: 'on'
-      illuminance_sensor: sensor.0x00158d00036b9e63_illuminance_lux
-      illuminance_below: '100'
 - id: '1612179924141'
   alias: FL Motion Sensor Trigger Light On  / Off
   description: ''
@@ -1281,4 +1267,96 @@
     - service: light.turn_off
       data: {}
       entity_id: light.drucker_box
+  mode: single
+- id: '1613674206000'
+  alias: Bad baynesian tigger light
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.bd_motion_occupancy
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.bd_motion_occupancy
+        state: 'on'
+      sequence:
+      - condition: numeric_state
+        entity_id: sensor.bd_motion_illuminance
+        below: '120'
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.bad_lichtschalter
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.bd_motion_occupancy
+        state: 'off'
+      sequence:
+      - condition: state
+        entity_id: binary_sensor.baynesian_badezimmer
+        state: 'off'
+      - service: switch.turn_off
+        data: {}
+        entity_id: switch.bad_lichtschalter
+    default: []
+  mode: single
+- id: '1614152057995'
+  alias: CF is Home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: person.janneck
+  - platform: state
+    entity_id: person.luca
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: person.janneck
+        state: home
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.is_home
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: person.janneck
+          state: home
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.is_home
+    default: []
+  mode: single
+- id: '1614153203046'
+  alias: CF play music when janneck comes home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.apartment_door_contact
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sensor.janneck_came_home_last_5_min
+    state: 'True'
+  action:
+  - service: input_select.select_option
+    data:
+      option: Wohnung
+    entity_id: input_select.playback_devices
+  - service: input_select.select_option
+    data:
+      option: Chillige Mukke
+    entity_id: input_select.playlists
+  - service: input_number.set_value
+    data:
+      value: 20
+    entity_id: input_number.volume
+  - service: script.cf_start_playback
+    data: {}
   mode: single

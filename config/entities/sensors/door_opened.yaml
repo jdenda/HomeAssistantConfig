@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  door_opened_5_min:
+    friendly_name: "door_opened_5_min"
+    value_template: >-
+      {{ now().timestamp() - as_timestamp(states.binary_sensor.apartment_door_contact.last_changed) <=  300}}

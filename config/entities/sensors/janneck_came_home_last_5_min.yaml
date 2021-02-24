@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  janneck_came_home_last_5_min:
+    friendly_name: "janneck_came_home_last_5_min"
+    value_template: >-
+      {{ now().timestamp() - as_timestamp(states.person.janneck.last_changed) <=  300 and is_state("person.janneck", "home")}}
