@@ -1371,4 +1371,19 @@
       timestamp_sensor: sensor.pixel_4_xl_next_alarm
       check_entity: binary_sensor.workday_today
       sunrise_duration: 20
-      post_sunrise_actions: []
+      post_sunrise_actions:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.adaptive_lighting_schlafzimmer
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.wecker_aktiv
+      end_brightness: '254'
+      pre_sunrise_actions:
+      - service: switch.turn_off
+        data: {}
+        entity_id: switch.adaptive_lighting_schlafzimmer
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.wecker_aktiv
+      start_brightness: '1'
